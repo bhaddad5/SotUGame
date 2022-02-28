@@ -15,8 +15,8 @@ namespace Assets.GameModel
 		[TextArea(15, 20)]
 		public string Description;
 
-		public Texture2D Icon;
-		public Texture2D BackgroundImage;
+		public Sprite Icon;
+		public Sprite BackgroundImage;
 
 		public Vector2 UiPosition;
 
@@ -25,7 +25,6 @@ namespace Assets.GameModel
 		public bool ClosedOnWeekends;
 
 		public List<Policy> Policies = new List<Policy>();
-		public List<Mission> Missions = new List<Mission>();
 		public List<Npc> Npcs = new List<Npc>();
 
 		public bool ShowTrophyCase;
@@ -42,8 +41,6 @@ namespace Assets.GameModel
 
 			foreach (var ob in Npcs)
 				ob.Setup(mgm);
-			foreach (var ob in Missions)
-				ob.Setup();
 			foreach (var ob in Policies)
 				ob.Setup();
 		}

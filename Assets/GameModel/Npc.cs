@@ -22,37 +22,21 @@ namespace Assets.GameModel
 			rt.anchoredPosition = Vector2.zero;
 		}
 	}
-
-	[Serializable]
-	public struct NpcData
-	{
-		public float Ambition;
-		public float Pride;
-		public bool Controlled;
-		public bool Exists;
-		public bool Trained;
-	}
-
+	
 	[Serializable]
 	public class Npc : ScriptableObject
 	{
 		[HideInInspector]
 		public string Id;
 
-		public bool IsControllable;
-		
+		public int StartingOpinion;
 
-		public float StartingAmbition;
-		public float StartingPride;
-
+		public string Title;
 		public string FirstName;
 		public string LastName;
 		public int Age;
-		public string Education;
 		[TextArea(15, 20)]
 		public string Bio;
-
-		public Interaction RequiredVisibilityInteractionReference;
 
 		[Header("Screen Position in Department/Location")]
 		public NpcLayout LocationLayout = new NpcLayout() { width = 200, xPos = .5f, yPos = .5f };
@@ -60,24 +44,19 @@ namespace Assets.GameModel
 		[Header("Screen Position when talking to her")]
 		public NpcLayout PersonalLayout = new NpcLayout() { width = 200, xPos = .5f, yPos = .5f };
 
-		public Texture2D BackgroundImage;
+		public Sprite BackgroundImage;
+
+		public ActionRequirements VisibilityRequirements;
 		
 		[HideInInspector]
-		public float Ambition;
-		[HideInInspector]
-		public float Pride;
+		public int Opinion;
 		[HideInInspector]
 		public bool Controlled;
 		[HideInInspector]
-		public bool Trained;
-		[HideInInspector]
 		public bool Exists = true;
 
+		public Sprite Image;
 		public List<Interaction> Interactions = new List<Interaction>();
-
-		public List<Texture2D> IndependentImages = new List<Texture2D>();
-		public List<Texture2D> ControlledImages = new List<Texture2D>();
-		public List<Texture2D> TrainedImages = new List<Texture2D>();
 		private MainGameManager mgm;
 
 		public void Setup(MainGameManager mgm)
@@ -85,10 +64,8 @@ namespace Assets.GameModel
 			this.mgm = mgm;
 
 			Controlled = false;
-			Trained = false;
 			Exists = true;
-			Ambition = StartingAmbition;
-			Pride = StartingPride;
+			Opinion = StartingOpinion;
 
 			foreach (var ob in Interactions)
 				ob.Setup();
@@ -99,25 +76,14 @@ namespace Assets.GameModel
 			if (!Exists)
 				return false;
 
-			return (RequiredVisibilityInteractionReference?.Completed ?? 1) > 0;
+			return VisibilityRequirements.RequirementsAreMet(mgm);
 		}
 
 		public bool HasNewInteractions(MainGameManager mgm)
 		{
 			return Interactions.Any(i => i.IsNew(mgm));
 		}
-
-		public Texture2D GetCurrentPicture()
-		{
-			Random r = new Random(mgm.Data.TurnNumber);
-			if (Trained)
-				return TrainedImages[r.Next(0, TrainedImages.Count)];
-			else if (Controlled)
-				return ControlledImages[r.Next(0, ControlledImages.Count)];
-			else
-				return IndependentImages[r.Next(0, IndependentImages.Count)];
-		}
-
+		
 		public override string ToString()
 		{
 			return $"{FirstName} {LastName}";

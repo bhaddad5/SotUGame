@@ -15,12 +15,8 @@ namespace Assets.GameModel.UiDisplayers
 		[SerializeField] private Image BackgroundImage;
 		[SerializeField] private Transform NpcOptionsParent;
 
-		[SerializeField] private Transform PoliciesButton;
 		[SerializeField] private PoliciesPopupBindings PoliciesPopupPrefab;
-
-		[SerializeField] private Transform MissionsButton;
-		[SerializeField] private MissionsPopupBindings MissionsPopupPrefab;
-
+		
 		[SerializeField] private LocationNpcEntryBindings _npcButtonPrefab;
 		[SerializeField] private NpcScreenBindings _npcUiPrefab;
 		
@@ -41,12 +37,6 @@ namespace Assets.GameModel.UiDisplayers
 				f.Setup(npc, this, mgm);
 				f.transform.SetParent(NpcOptionsParent);
 			}
-
-			if (loc.Policies.Count == 0)
-				PoliciesButton.gameObject.SetActive(false);
-
-			if (loc.Missions.Count == 0)
-				MissionsButton.gameObject.SetActive(false);
 		}
 
 		public void CloseCurrentLocation()
@@ -68,13 +58,6 @@ namespace Assets.GameModel.UiDisplayers
 			policiesPopup.Setup(loc, mgm);
 		}
 
-		public void OpenMissions()
-		{
-			var popupParent = GameObject.Instantiate(UiPrefabReferences.Instance.PopupOverlayParent);
-			var missionsPopup = GameObject.Instantiate(MissionsPopupPrefab, popupParent.transform);
-			missionsPopup.Setup(loc);
-		}
-
 		private GameObject currNpc;
 		public void ShowNpc(Npc npc, MainGameManager mgm)
 		{
@@ -94,7 +77,7 @@ namespace Assets.GameModel.UiDisplayers
 
 		public void RefreshUiDisplay(MainGameManager mgm)
 		{
-			BackgroundImage.sprite = loc.BackgroundImage.ToSprite();
+			BackgroundImage.sprite = loc.BackgroundImage;
 			Name.text = loc.Name;
 			Description.text = loc.Description;
 			if (loc.Controlled)

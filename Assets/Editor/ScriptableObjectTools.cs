@@ -43,12 +43,7 @@ public class ScriptableObjectTools
 				EditorUtility.SetDirty(npc);
 			}
 			EditorUtility.SetDirty(location);
-
-			foreach (var mission in location.Missions)
-			{
-				EditorUtility.SetDirty(mission);
-			}
-
+			
 			foreach (var policy in location.Policies)
 			{
 				EditorUtility.SetDirty(policy);
@@ -115,18 +110,11 @@ public class ScriptableObjectTools
 					EditorUtility.SetDirty(interaction);
 				}
 				npc.Controlled = false;
-				npc.Trained = false;
 				EditorUtility.SetDirty(npc);
 			}
 			location.Controlled = false;
 			EditorUtility.SetDirty(location);
-
-			foreach (var mission in location.Missions)
-			{
-				mission.Completed = false;
-				EditorUtility.SetDirty(mission);
-			}
-
+			
 			foreach (var policy in location.Policies)
 			{
 				policy.Active = false;

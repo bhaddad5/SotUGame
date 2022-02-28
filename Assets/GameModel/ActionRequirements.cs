@@ -9,8 +9,7 @@ namespace Assets.GameModel
 	{
 		public enum NpcStat
 		{
-			Ambition,
-			Pride,
+			Opinion,
 		}
 
 		public enum Comparison
@@ -45,8 +44,6 @@ namespace Assets.GameModel
 		public int RequiredTurnNumber;
 
 		public int RequiredMandate;
-
-		public List<NpcStatRequirement> NpcStatRequirements;
 		
 		public List<Interaction> RequiredInteractions;
 		public List<Interaction> RequiredNotCompletedInteractions;
@@ -69,13 +66,7 @@ namespace Assets.GameModel
 				if (!controlledNpc.Controlled)
 					return false;
 			}
-
-			foreach (var trainedNpc in RequiredNpcsTrained)
-			{
-				if (!trainedNpc.Trained)
-					return false;
-			}
-
+			
 			foreach (var interaction in RequiredNotCompletedInteractions)
 			{
 				if (interaction.Completed > 0)
@@ -88,13 +79,6 @@ namespace Assets.GameModel
 					return false;
 			}
 
-			//This is a weird hack.  Basically we don't wanna display the interaction if it is based on pride and you don't control them yet
-			foreach (var req in NpcStatRequirements)
-			{
-				if (req.Stat == NpcStatRequirement.NpcStat.Pride && !req.CheckStat(req.OptionalNpcReference.Pride) && !req.OptionalNpcReference.Controlled)
-					return false;
-			}
-
 			return true;
 		}
 
@@ -102,15 +86,7 @@ namespace Assets.GameModel
 		{
 			if (!VisRequirementsAreMet())
 				return false;
-
-			foreach (var req in NpcStatRequirements)
-			{
-				if (req.Stat == NpcStatRequirement.NpcStat.Ambition && !req.CheckStat(req.OptionalNpcReference.Ambition))
-					return false;
-				if (req.Stat == NpcStatRequirement.NpcStat.Pride && !req.CheckStat(req.OptionalNpcReference.Pride))
-					return false;
-			}
-
+			
 			foreach (var interactionDept in RequiredDepartmentsControled)
 			{
 				if (!interactionDept.Controlled)

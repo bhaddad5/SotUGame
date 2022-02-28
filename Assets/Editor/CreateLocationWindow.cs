@@ -45,8 +45,6 @@ public class CreateLocationWindow : EditorWindow
 
 		string locFolder = Path.Combine($"Assets/Data", loc.Name.ToFolderName());
 		AssetDatabase.CreateFolder($"Assets/Data", loc.Name.ToFolderName());
-		AssetDatabase.CreateFolder(locFolder, "_Missions");
-		AssetDatabase.CreateFolder(locFolder, "_Policies");
 
 		AssetDatabase.CreateAsset(loc, $"{locFolder}/{loc.Name.ToFolderName()}.asset");
 		AssetDatabase.SaveAssets();

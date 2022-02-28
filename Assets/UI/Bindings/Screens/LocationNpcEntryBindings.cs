@@ -39,7 +39,9 @@ namespace Assets.GameModel.UiDisplayers
 		public void RefreshUiDisplay(MainGameManager mgm)
 		{
 			Text.text = $"{npc.FirstName} {npc.LastName}";
-			NpcPic.sprite = npc.GetCurrentPicture().ToSprite();
+			if (!string.IsNullOrWhiteSpace(npc.Title))
+				Text.text = $"{npc.Title} {Text.text}";
+			NpcPic.sprite = npc.Image;
 			gameObject.SetActive(npc.IsVisible(mgm));
 			NewIndicator.SetActive(npc.HasNewInteractions(mgm));
 		}

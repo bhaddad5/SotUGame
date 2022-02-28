@@ -33,7 +33,7 @@ namespace Assets.GameModel.UiDisplayers
 
 		public void RefreshUiDisplay(MainGameManager mgm)
 		{
-			Icon.sprite = loc.Icon.ToSprite();
+			Icon.sprite = loc.Icon;
 			Text.text = $"{loc.Name}";
 			var dayOfWeek = mgm.GetDateFromTurnNumber().DayOfWeek;
 			Button.interactable = !loc.ClosedOnWeekends || (dayOfWeek != DayOfWeek.Saturday && dayOfWeek != DayOfWeek.Sunday);

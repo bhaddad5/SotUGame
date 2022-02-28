@@ -61,8 +61,6 @@
     <Compile Include="Assets\UI System\TooltipProviderBasic.cs" />
     <Compile Include="Assets\GameModel\MainGameManager.cs" />
     <Compile Include="Assets\UI\Bindings\Popups\PoliciesPopupBindings.cs" />
-    <Compile Include="Assets\UI\Bindings\Popups\MissionsPopupBindings.cs" />
-    <Compile Include="Assets\GameModel\Mission.cs" />
     <Compile Include="Assets\UI\Bindings\Popups\MainMenuBindings.cs" />
     <Compile Include="Assets\GameModel\Effect.cs" />
     <Compile Include="Assets\GameModel\InteractionResult.cs" />
@@ -80,7 +78,6 @@
     <Compile Include="Assets\UI System\UiColorSchemeHandler.cs" />
     <Compile Include="Assets\GameModel\SaveGameState\SaveGameState.cs" />
     <Compile Include="Assets\UI\Bindings\Screens\LocationScreenBindings.cs" />
-    <Compile Include="Assets\UI\Bindings\Popups\MissionEntryBindings.cs" />
     <Compile Include="Assets\GameModel\Npc.cs" />
     <Compile Include="Assets\GameModel\DialogEntry.cs" />
     <Compile Include="Assets\GameModel\SaveGameState\SaveLoadHandler.cs" />

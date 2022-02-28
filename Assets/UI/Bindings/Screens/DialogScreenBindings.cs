@@ -66,9 +66,9 @@ public class DialogScreenBindings : MonoBehaviour
 
 		if (dialog.OptionalNpcReference != null)
 		{
-			NpcImage.sprite = dialog.OptionalNpcReference.GetCurrentPicture().ToSprite();
+			NpcImage.sprite = dialog.OptionalNpcReference.Image;
 			if (dialog.CustomNpcImageOptions != null && dialog.CustomNpcImageOptions.Count > 0)
-				NpcImage.sprite = dialog.CustomNpcImageOptions[UnityEngine.Random.Range(0, dialog.CustomNpcImageOptions.Count)].ToSprite();
+				NpcImage.sprite = dialog.CustomNpcImageOptions[UnityEngine.Random.Range(0, dialog.CustomNpcImageOptions.Count)];
 		}
 		else
 		{
@@ -77,7 +77,7 @@ public class DialogScreenBindings : MonoBehaviour
 
 		if (dialog.CustomBackground != null)
 		{
-			NpcBackground.sprite = dialog.CustomBackground.ToSprite();
+			NpcBackground.sprite = dialog.CustomBackground;
 			dialog.CustomBackgroundNpcLayout.ApplyToRectTransform(NpcImage.GetComponent<RectTransform>());
 		}
 		else

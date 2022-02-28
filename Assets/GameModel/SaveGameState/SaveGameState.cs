@@ -89,7 +89,6 @@ namespace Assets.GameModel.Save
 
 		public List<SavedNpcState> Npcs;
 		public List<SavedPolicyState> Policies;
-		public List<SavedMissionState> Missions;
 
 		public static SavedLocationState FromData(Location data)
 		{
@@ -112,14 +111,6 @@ namespace Assets.GameModel.Save
 					res.Policies.Add(SavedPolicyState.FromData(dataPolicy));
 			}
 
-			res.Missions = new List<SavedMissionState>();
-			foreach (var dataMission in data.Missions)
-			{
-				if(dataMission != null)
-					res.Missions.Add(SavedMissionState.FromData(dataMission));
-			}
-
-
 			return res;
 		}
 
@@ -140,10 +131,6 @@ namespace Assets.GameModel.Save
 			foreach (var policy in Policies)
 			{
 				policy.ApplyToData(data.Policies.FirstOrDefault(d => d?.Id == policy.Id));
-			}
-			foreach (var mission in Missions)
-			{
-				mission.ApplyToData(data.Missions.FirstOrDefault(d => d?.Id == mission.Id));
 			}
 		}
 	}
@@ -174,44 +161,15 @@ namespace Assets.GameModel.Save
 			data.Active = Active;
 		}
 	}
-
-	[Serializable]
-	public struct SavedMissionState
-	{
-		public string Id;
-
-		public bool Completed;
-
-		public static SavedMissionState FromData(Mission data)
-		{
-			var res = new SavedMissionState();
-			res.Id = data.Id;
-			res.Completed = data.Completed;
-
-			return res;
-		}
-
-		public void ApplyToData(Mission data)
-		{
-			if (data == null)
-			{
-				Debug.Log($"Could not find Mission with id {Id}");
-				return;
-			}
-			data.Completed = Completed;
-		}
-	}
-
+	
 	[Serializable]
 	public struct SavedNpcState
 	{
 		public string Id;
 
-		public float Ambition;
-		public float Pride;
 		public bool Controlled;
 		public bool Exists;
-		public bool Trained;
+		public int Opinion;
 
 		public List<SavedInteractionState> Interactions;
 
@@ -219,11 +177,9 @@ namespace Assets.GameModel.Save
 		{
 			var res = new SavedNpcState();
 			res.Id = data.Id;
-			res.Ambition = data.Ambition;
 			res.Controlled = data.Controlled;
-			res.Pride = data.Pride;
 			res.Exists = data.Exists;
-			res.Trained = data.Trained;
+			res.Opinion = data.Opinion;
 
 			res.Interactions = new List<SavedInteractionState>();
 			foreach (var dataInteraction in data.Interactions)
@@ -243,11 +199,9 @@ namespace Assets.GameModel.Save
 				return;
 			}
 
-			data.Ambition = Ambition;
 			data.Controlled = Controlled;
-			data.Pride = Pride;
 			data.Exists = Exists;
-			data.Trained = Trained;
+			data.Opinion = Opinion;
 
 			foreach (var interaction in Interactions)
 			{

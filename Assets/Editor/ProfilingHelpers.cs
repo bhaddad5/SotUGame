@@ -97,11 +97,6 @@ public static class ProfilingHelpers
 			{
 				AllText += $"POLICY - {policy.name}: {policy.Description}\n\n";
 			}
-
-			foreach (var mission in location.Missions)
-			{
-				AllText += $"MISSION - {mission.name}: {mission.MissionDescription}\n\n";
-			}
 		}
 
 		GUIUtility.systemCopyBuffer = AllText;

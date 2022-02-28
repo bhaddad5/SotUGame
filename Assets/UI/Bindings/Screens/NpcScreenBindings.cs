@@ -14,10 +14,9 @@ namespace Assets.GameModel.UiDisplayers
 	{
 		[SerializeField] private TMP_Text Name;
 		[SerializeField] private TMP_Text Age;
-		[SerializeField] private TMP_Text Ambition;
-		[SerializeField] private TMP_Text Pride;
-		[SerializeField] private TMP_Text Education;
 		[SerializeField] private TMP_Text Bio;
+		[SerializeField] private TMP_Text Opinion;
+
 		[SerializeField] private Image Picture;
 		[SerializeField] private Image BackgroundImage;
 		[SerializeField] private Transform InfoBox;
@@ -33,10 +32,7 @@ namespace Assets.GameModel.UiDisplayers
 			this.onClose = onClose;
 
 			this.npc.PersonalLayout.ApplyToRectTransform(Picture.GetComponent<RectTransform>());
-
-			if (!npc.IsControllable)
-				InfoBox.gameObject.SetActive(false);
-
+			
 			var allInteractions = new List<Interaction>(npc.Interactions);
 			allInteractions.RemoveAll(i => i == null);
 			allInteractions.Sort((i1, i2) =>
@@ -54,20 +50,16 @@ namespace Assets.GameModel.UiDisplayers
 			}
 
 			Name.text = $"{this.npc.FirstName} {this.npc.LastName}";
-
-			if (this.npc.Trained)
-				Name.text += " (Trained)";
-			else if (this.npc.Controlled)
+			
+			if (this.npc.Controlled)
 				Name.text += " (Controlled)";
 
 			Age.text = $"{this.npc.Age} years old";
-			Ambition.text = $"Ambition: {this.npc.Ambition}";
-			Pride.text = $"Pride: {this.npc.Pride}";
-			Picture.sprite = this.npc.GetCurrentPicture().ToSprite();
+			Opinion.text = $"Opinion: {this.npc.Opinion} of 5";
+			Picture.sprite = this.npc.Image;
 			Picture.preserveAspect = true;
 			Bio.text = $"Notes: {this.npc.Bio}";
-			Education.text = $"Education: {this.npc.Education}";
-			BackgroundImage.sprite = this.npc.BackgroundImage.ToSprite();
+			BackgroundImage.sprite = this.npc.BackgroundImage;
 		}
 
 		public void CloseNpc()

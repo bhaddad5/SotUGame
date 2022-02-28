@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666a6c588bafc7c4f9378948d1a9a946, type: 3}
+  m_Name: Judith Rinewald
+  m_EditorClassIdentifier: 
+  Id: f775573c-2a72-4ff3-8f54-8985487ef3a6
+  StartingOpinion: 0
+  Title: Councilwoman
+  FirstName: Judith
+  LastName: Rinewald
+  Age: 0
+  Bio: 
+  LocationLayout:
+    xPos: 0.5
+    yPos: 0.5
+    width: 200
+  PersonalLayout:
+    xPos: 0.5
+    yPos: 0.5
+    width: 200
+  BackgroundImage: {fileID: 0}
+  VisibilityRequirements:
+    RequiredTurnNumber: 0
+    RequiredMandate: 0
+    RequiredInteractions: []
+    RequiredNotCompletedInteractions: []
+    RequiredPolicies: []
+    RequiredDepartmentsControled: []
+    RequiredNpcsControled: []
+    RequiredNpcsTrained: []
+    RequiredNpcsNotControled: []
+  Opinion: 0
+  Controlled: 0
+  Exists: 1
+  Image: {fileID: 0}
+  Interactions: []

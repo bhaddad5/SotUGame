@@ -10,8 +10,7 @@ namespace Assets.GameModel
 	{
 		[Header("Defaults to the interaction's NPC, if present")]
 		public Npc OptionalNpcReference;
-		public float AmbitionEffect;
-		public float PrideEffect;
+		public int OpinionEffect;
 	}
 
 	[Serializable]
@@ -32,8 +31,10 @@ namespace Assets.GameModel
 		{
 			foreach (var effect in NpcEffects)
 			{
-				effect.OptionalNpcReference.Pride = Mathf.Max(effect.OptionalNpcReference.Pride + effect.PrideEffect, 0);
-				effect.OptionalNpcReference.Ambition = Mathf.Max(effect.OptionalNpcReference.Ambition + effect.AmbitionEffect, 0);
+				var clamp = Mathf.Clamp(effect.OptionalNpcReference.Opinion + effect.OpinionEffect, 1, 5);
+				effect.OptionalNpcReference.Opinion = Mathf.Max(clamp, 0);
+				if (clamp == 5)
+					effect.OptionalNpcReference.Controlled = true;
 			}
 
 			mgm.Data.Intrigue = mgm.Data.Intrigue + IntrigueEffect;

@@ -63,10 +63,8 @@ namespace Assets.GameModel.UiDisplayers
 
 				str += $"{npcEffect.OptionalNpcReference.FirstName} {npcEffect.OptionalNpcReference.LastName}: ";
 
-				if (npcEffect.AmbitionEffect != 0)
-					str += $"{npcEffect.AmbitionEffect} Ambition, ";
-				if (npcEffect.PrideEffect != 0)
-					str += $"{npcEffect.PrideEffect} Pride, ";
+				if (npcEffect.OpinionEffect != 0)
+					str += $"+{npcEffect.OpinionEffect} Opinion, ";
 
 				if (str.EndsWith(", "))
 					str = str.Substring(0, str.Length - 2);
@@ -103,12 +101,6 @@ namespace Assets.GameModel.UiDisplayers
 				if (!npc.Controlled)
 					tooltips.Add($"Control of {npc.FirstName}");
 			}
-
-			foreach (var ob in req.RequiredNpcsTrained)
-			{
-				if (!ob.Trained)
-					tooltips.Add($"{ob.FirstName} Trained");
-			}
 			
 			foreach (var requiredPolicy in req.RequiredPolicies)
 			{
@@ -120,14 +112,6 @@ namespace Assets.GameModel.UiDisplayers
 			{
 				if(interaction.Completed == 0)
 					tooltips.Add($"{interaction.Name}");
-			}
-			
-			foreach (var npcReq in req.NpcStatRequirements)
-			{
-				if (npcReq.Stat == NpcStatRequirement.NpcStat.Ambition && !npcReq.CheckStat(npcReq.OptionalNpcReference.Ambition))
-					tooltips.Add($"{npcReq.OptionalNpcReference.FirstName}: {npcReq.Value} or less Ambition");
-				if (npcReq.Stat == NpcStatRequirement.NpcStat.Pride && !npcReq.CheckStat(npcReq.OptionalNpcReference.Pride))
-					tooltips.Add($"{npcReq.OptionalNpcReference.FirstName}: {npcReq.Value} or less Pride");
 			}
 			
 			if (req.RequiredMandate > mgm.Data.Mandate)
@@ -151,13 +135,6 @@ namespace Assets.GameModel.UiDisplayers
 			}
 
 			return finalTooltip;
-		}
-
-		public static Sprite ToSprite(this Texture2D tex)
-		{
-			if (tex == null)
-				return null;
-			return Sprite.Create(tex, new Rect(Vector2.zero, new Vector2(tex.width, tex.height)), Vector2.zero);
 		}
 	}
 }

@@ -56,7 +56,6 @@
     <Compile Include="Assets\Editor\CreateLocationWindow.cs" />
     <Compile Include="Assets\Editor\CreatePolicyWindow.cs" />
     <Compile Include="Assets\Editor\CreateCmanUi.cs" />
-    <Compile Include="Assets\Editor\CreateMissionWindow.cs" />
     <Compile Include="Assets\Editor\CreateInteractionWindow.cs" />
     <Compile Include="Assets\Editor\CreationWindowHelpers.cs" />
     <Compile Include="Assets\Editor\CreateStartTurnInteractionWindow.cs" />

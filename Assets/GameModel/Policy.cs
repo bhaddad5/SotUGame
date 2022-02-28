@@ -15,7 +15,7 @@ namespace Assets.GameModel
 
 		public string Name;
 
-		public Texture2D Image;
+		public Sprite Image;
 
 		[TextArea(15, 20)]
 		public string Description;

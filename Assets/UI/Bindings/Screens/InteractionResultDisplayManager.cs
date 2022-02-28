@@ -10,7 +10,6 @@ public class InteractionResultDisplayManager
 {
 	private List<DialogEntry> currDialogsToShow = new List<DialogEntry>();
 	private List<Popup> currPopupsToShow = new List<Popup>();
-	private List<Mission> currMissionsToShow = new List<Mission>();
 	private Action resultComplete = null;
 	private int completedCount;
 	private MainGameManager mgm;
@@ -51,19 +50,6 @@ public class InteractionResultDisplayManager
 		{
 			var popup = currPopupsToShow[0];
 			currPopupsToShow.RemoveAt(0);
-
-			var popupParent = GameObject.Instantiate(UiPrefabReferences.Instance.PopupOverlayParent);
-			GameObject.Instantiate(UiPrefabReferences.Instance.GetPrefabByName("Popup Display"), popupParent.transform).GetComponent<PopupBindings>().Setup(popup, completedCount, mgm, HandleNextDialog);
-		}
-		else if (currMissionsToShow.Count > 0)
-		{
-			var popup = new Popup()
-			{
-				Title = $"Mission Complete: {currMissionsToShow[0].MissionName}",
-				Texture = currMissionsToShow[0].MissionImage,
-				Text = currMissionsToShow[0].MissionDescription,
-			};
-			currMissionsToShow.RemoveAt(0);
 
 			var popupParent = GameObject.Instantiate(UiPrefabReferences.Instance.PopupOverlayParent);
 			GameObject.Instantiate(UiPrefabReferences.Instance.GetPrefabByName("Popup Display"), popupParent.transform).GetComponent<PopupBindings>().Setup(popup, completedCount, mgm, HandleNextDialog);

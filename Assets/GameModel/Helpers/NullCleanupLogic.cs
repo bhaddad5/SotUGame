@@ -11,7 +11,6 @@ public static class NullCleanupLogic
 		{
 			location.Npcs.RemoveAll(i => i == null);
 			location.Policies.RemoveAll(i => i == null);
-			location.Missions.RemoveAll(i => i == null);
 
 			foreach (var npc in location.Npcs)
 			{
