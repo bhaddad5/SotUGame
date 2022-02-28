@@ -21,9 +21,6 @@ public static class ProfilingHelpers
 			{
 				foreach (var interaction in npc.Interactions)
 				{
-					if(interaction.Result.Effect.LocationsToControl.Contains(loc))
-						Debug.Log($"Controlled by: {interaction}");
-
 					if (interaction.Result.Effect.NpcsToControl.Contains(selectedNpc))
 						Debug.Log($"Controlled by: {interaction}");
 
@@ -49,14 +46,8 @@ public static class ProfilingHelpers
 				{
 					foreach (var ob in interaction.Result.Effect.NpcsToControl)
 						Debug.Log($"{ob} controlled by {interaction}");
-					foreach (var ob in interaction.Result.Effect.NpcsToTrain)
-						Debug.Log($"{ob} trained by {interaction}");
 					foreach (var ob in interaction.Result.Effect.NpcsToRemoveFromGame)
 						Debug.Log($"{ob} removed from game by {interaction}");
-					foreach (var ob in interaction.Result.Effect.LocationsToControl)
-						Debug.Log($"{ob} controlled by {interaction}");
-					foreach (var ob in interaction.Result.Effect.MissionsToComplete)
-						Debug.Log($"{ob} completed by {interaction}");
 				}
 			}
 		}
@@ -117,8 +108,8 @@ public static class ProfilingHelpers
 		Debug.Log("Copy Complete!  Paste it anywhere");
 	}
 
-	[MenuItem("Selectacorp Debugging/Calculate Power Totals")]
-	public static void CalculatePowerTotals()
+	[MenuItem("Selectacorp Debugging/Calculate Mandate Totals")]
+	public static void CalculateMandateTotals()
 	{
 		var gameData = AssetDatabase.LoadAssetAtPath<GameData>("Assets/Data/GameData.asset");
 
@@ -133,7 +124,7 @@ public static class ProfilingHelpers
 				float npcTotalPower = 0f;
 				foreach (var interaction in npc.Interactions)
 				{
-					npcTotalPower += interaction.Result.Effect.PowerEffect;
+					npcTotalPower += interaction.Result.Effect.MandateEffect;
 				}
 
 				locationTotalPower += npcTotalPower;
@@ -141,23 +132,17 @@ public static class ProfilingHelpers
 				npcsString += $" ({npc.FirstName} {npc.LastName} - Power: {npcTotalPower})";
 			}
 
-			float missionsPowerTotal = 0;
-			foreach (var mission in location.Missions)
-			{
-				locationTotalPower += mission.Effect.PowerEffect;
-				missionsPowerTotal += mission.Effect.PowerEffect;
-			}
 			float policiesPowerTotal = 0;
 			foreach (var policy in location.Policies)
 			{
-				locationTotalPower += policy.Effect.PowerEffect;
-				policiesPowerTotal += policy.Effect.PowerEffect;
+				locationTotalPower += policy.Effect.MandateEffect;
+				policiesPowerTotal += policy.Effect.MandateEffect;
 			}
 
 			totalPowerInGame += locationTotalPower;
 
 			if (locationTotalPower != 0)
-				Debug.Log($"{location.Name}: Total Power = {locationTotalPower}, From Missions: {missionsPowerTotal}, From Policies {policiesPowerTotal}, From NPCs: {allNpcsPower} {npcsString}");
+				Debug.Log($"{location.Name}: Total Power = {locationTotalPower}, From Policies {policiesPowerTotal}, From NPCs: {allNpcsPower} {npcsString}");
 		}
 
 		Debug.Log($"Total Power In Game = {totalPowerInGame}");

@@ -10,36 +10,36 @@ namespace Assets.GameModel
 	{
 		public string FirstName = "";
 		public string LastName = "";
-		public float StartingEgo = 0;
-		public float StartingFunds = 0;
+		public string PartyName = "";
+
+		public int StartingActions = 0;
+		public int StartingIntrigue = 0;
 
 		[HideInInspector] public int TurnNumber = 0;
-		[HideInInspector] public float Ego = 0;
-		[HideInInspector] public float Funds = 0;
-		[HideInInspector] public float Power = 0;
-		[HideInInspector] public float Patents = 0;
-		[HideInInspector] public float CorporateCulture = 0;
-		[HideInInspector] public float Spreadsheets = 0;
-		[HideInInspector] public float Brand = 0;
-		[HideInInspector] public float Revenue = 0;
-		[HideInInspector] public int Hornical = 0;
-		
+		[HideInInspector] public int Actions = 0;
+		[HideInInspector] public int Intrigue = 0;
+
+		[HideInInspector] public int Wealth = 0;
+		[HideInInspector] public int Influence = 0;
+
+		[HideInInspector] public int Mandate = 0;
+
+		[HideInInspector] public int Legacy = 0;
+
 		public List<Location> Locations = new List<Location>();
 		public List<Interaction> StartOfTurnInteractions = new List<Interaction>();
 
 		public void Setup(MainGameManager mgm)
 		{
 			TurnNumber = 0;
-			Ego = StartingEgo;
-			Funds = StartingFunds;
+			Actions = StartingActions;
+			Intrigue = StartingIntrigue;
 
-			Power = 0;
-			Patents = 0;
-			CorporateCulture = 0;
-			Spreadsheets = 0;
-			Brand = 0;
-			Revenue = 0;
-			Hornical = 0;
+			Wealth = 0;
+			Intrigue = 0;
+			Influence = 0;
+			Mandate = 0;
+			Legacy = 0;
 
 			foreach (var ob in Locations)
 				ob.Setup(mgm);

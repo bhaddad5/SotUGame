@@ -11,17 +11,16 @@ namespace Assets.GameModel.Save
 	{
 		public string FirstName;
 		public string LastName;
-		public int TurnNumber;
-		public float Ego;
-		public float Funds;
-		public float Power;
-		public float Patents;
-		public float CorporateCulture;
-		public float Spreadsheets;
-		public float Brand;
-		public float Revenue;
-		public int Hornical;
+		public string PartyName;
 
+		public int TurnNumber;
+		public int Actions;
+		public int Intrigue;
+		public int Wealth;
+		public int Influence;
+		public int Mandate;
+		public int Legacy;
+		
 		public List<SavedLocationState> Locations;
 		public List<SavedInteractionState> StartTurnInteractions;
 
@@ -31,16 +30,14 @@ namespace Assets.GameModel.Save
 
 			res.FirstName = data.FirstName ?? "Hunter";
 			res.LastName = data.LastName ?? "Downe";
+			res.PartyName = data.PartyName ?? "Family";
 			res.TurnNumber = data.TurnNumber;
-			res.Ego = data.Ego;
-			res.Funds = data.Funds;
-			res.Power = data.Power;
-			res.Patents = data.Patents;
-			res.CorporateCulture = data.CorporateCulture;
-			res.Spreadsheets = data.Spreadsheets;
-			res.Brand = data.Brand;
-			res.Revenue = data.Revenue;
-			res.Hornical = data.Hornical;
+			res.Actions = data.Actions;
+			res.Intrigue = data.Intrigue;
+			res.Wealth = data.Wealth;
+			res.Influence = data.Influence;
+			res.Mandate = data.Mandate;
+			res.Legacy = data.Legacy;
 
 			res.Locations = new List<SavedLocationState>();
 			foreach (var dataLocation in data.Locations)
@@ -64,15 +61,12 @@ namespace Assets.GameModel.Save
 			data.FirstName = FirstName ?? "Hunter";
 			data.LastName = LastName ?? "Downe";
 			data.TurnNumber = TurnNumber;
-			data.Ego = Ego;
-			data.Funds = Funds;
-			data.Power = Power;
-			data.Patents = Patents;
-			data.CorporateCulture = CorporateCulture;
-			data.Spreadsheets = Spreadsheets;
-			data.Brand = Brand;
-			data.Revenue = Revenue;
-			data.Hornical = Hornical;
+			data.Actions = Actions;
+			data.Intrigue = Intrigue;
+			data.Wealth = Wealth;
+			data.Influence = Influence;
+			data.Mandate = Mandate;
+			data.Legacy = Legacy;
 
 			foreach (var location in Locations)
 			{

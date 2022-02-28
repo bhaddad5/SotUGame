@@ -124,8 +124,10 @@ namespace Assets.GameModel
 		
 		public DateTime GetDateFromTurnNumber()
 		{
-			var currentDate = new DateTime(2030, 7, 1);
-			currentDate += new TimeSpan(Data.TurnNumber/2, 0, 0, 0);
+			int elapsedYears = Data.TurnNumber / 12;
+			int elapsedMonths = Data.TurnNumber % 12;
+
+			var currentDate = new DateTime(2030 + elapsedYears, elapsedMonths, 1);
 
 			return currentDate;
 		}

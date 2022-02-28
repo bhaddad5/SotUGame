@@ -94,17 +94,7 @@ public class ScriptableObjectTools
 
 		foreach (var location in gameData.Locations)
 		{
-			foreach (var mission in location.Missions)
-			{
-				if (mission == null)
-					continue;
-
-				bool hasCompletionInteractions = gameData.Locations.Any(l => l.Npcs.Any(n =>
-					n.Interactions.Any(i => i.Result.Effect.MissionsToComplete?.Contains(mission) ?? false)));
-
-				if(!hasCompletionInteractions)
-					Debug.Log($"{mission.MissionName} has no interactions that will complete it.");
-			}
+			
 		}
 
 		Debug.Log("Detection Complete!");
@@ -165,9 +155,6 @@ public class ScriptableObjectTools
 			{
 				if(!npc.Interactions.Any(i => i.Result.Effect.NpcsToControl.Count > 0) && npc.Interactions.Any(i => i.Name.ToLowerInvariant().Contains("control")))
 					Debug.Log("No control interaction for " + npc);
-
-				if (!npc.Interactions.Any(i => i.Result.Effect.NpcsToTrain.Count > 0) && npc.Interactions.Any(i => i.Name.ToLowerInvariant().Contains("break")))
-					Debug.Log("No train interaction for " + npc);
 			}
 		}
 		Debug.Log("Search Complete!");

@@ -35,7 +35,6 @@ public class InteractionResultDisplayManager
 			currDialogsToShow.Add(new DialogEntry(){CurrSpeaker = DialogEntry.Speaker.Narrator, Text = effectsString });
 		}
 		currPopupsToShow = new List<Popup>(res.OptionalPopups);
-		currMissionsToShow = new List<Mission>(res.Effect.MissionsToComplete);
 
 		HandleNextDialog();
 	}

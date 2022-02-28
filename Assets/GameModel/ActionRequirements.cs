@@ -42,10 +42,10 @@ namespace Assets.GameModel
 	[Serializable]
 	public struct ActionRequirements
 	{
-		public float RequiredPower;
-		public int RequiredPromotionLevel;
 		public int RequiredTurnNumber;
-		
+
+		public int RequiredMandate;
+
 		public List<NpcStatRequirement> NpcStatRequirements;
 		
 		public List<Interaction> RequiredInteractions;
@@ -122,9 +122,6 @@ namespace Assets.GameModel
 				if (!policy.Active)
 					return false;
 			}
-
-			if (mgm.Data.Power < RequiredPower)
-				return false;
 			
 			if (mgm.Data.TurnNumber < RequiredTurnNumber)
 				return false;

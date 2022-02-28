@@ -40,17 +40,11 @@ public static class NullCleanupLogic
 		interaction.Requirements.RequiredNpcsTrained.RemoveAll(i => i == null);
 		interaction.Requirements.RequiredPolicies.RemoveAll(i => i == null);
 
-		interaction.Result.Effect.LocationsToControl.RemoveAll(i => i == null);
 		interaction.Result.Effect.NpcsToControl.RemoveAll(i => i == null);
 		interaction.Result.Effect.NpcsToRemoveFromGame.RemoveAll(i => i == null);
-		interaction.Result.Effect.NpcsToTrain.RemoveAll(i => i == null);
-		interaction.Result.Effect.MissionsToComplete.RemoveAll(i => i == null);
 
-		interaction.FailureResult.Effect.LocationsToControl.RemoveAll(i => i == null);
 		interaction.FailureResult.Effect.NpcsToControl.RemoveAll(i => i == null);
 		interaction.FailureResult.Effect.NpcsToRemoveFromGame.RemoveAll(i => i == null);
-		interaction.FailureResult.Effect.NpcsToTrain.RemoveAll(i => i == null);
-		interaction.FailureResult.Effect.MissionsToComplete.RemoveAll(i => i == null);
 
 		for (int i = 0; i < interaction.Result.Dialogs.Count; i++)
 		{

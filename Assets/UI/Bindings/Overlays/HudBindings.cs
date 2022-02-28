@@ -11,25 +11,18 @@ using UnityEngine.UI;
 public class HudBindings : MonoBehaviour
 {
 	[SerializeField] private TMP_Text PlayerName;
-	[SerializeField] private TMP_Text PlayerTitle;
+	[SerializeField] private TMP_Text PartyName;
+	
+	[SerializeField] private TMP_Text Actions;
 
-	[SerializeField] private ResourceManagerUiDisplay Ego;
-	[SerializeField] private ResourceManagerUiDisplay Funds;
-	[SerializeField] private ResourceManagerUiDisplay Power;
+	[SerializeField] private ResourceManagerUiDisplay Intrigue;
+	[SerializeField] private ResourceManagerUiDisplay Wealth;
+	[SerializeField] private ResourceManagerUiDisplay Influence;
+	[SerializeField] private ResourceManagerUiDisplay Mandate;
+	[SerializeField] private ResourceManagerUiDisplay Legacy;
 
-	[SerializeField] private ResourceManagerUiDisplay Spreadsheets;
-	[SerializeField] private ResourceManagerUiDisplay Culture;
-	[SerializeField] private ResourceManagerUiDisplay Brand;
-	[SerializeField] private ResourceManagerUiDisplay Revanue;
-	[SerializeField] private ResourceManagerUiDisplay Patents;
-
-	[SerializeField] private ResourceManagerUiDisplay Hornical;
-
-	[SerializeField] private TMP_Text Day;
-	[SerializeField] private TMP_Text Time;
 	[SerializeField] private TMP_Text Month;
-
-	[SerializeField] private Button MyOffice;
+	[SerializeField] private TMP_Text Year;
 
 	[SerializeField] private Button MainMenuButton;
 	[SerializeField] private MainMenuBindings MainMenuPrefab;
@@ -77,23 +70,17 @@ public class HudBindings : MonoBehaviour
 	public void RefreshUiDisplay(MainGameManager mgm)
 	{
 		PlayerName.text = $"{mgm.Data.FirstName} {mgm.Data.LastName}";
+		PartyName.text = $"{mgm.Data.PartyName} Party";
 
-		Ego.RefreshResourceDisplay(mgm.Data.Ego);
-		Funds.RefreshResourceDisplay(mgm.Data.Funds);
-		Power.RefreshResourceDisplay(mgm.Data.Power);
+		Actions.text = mgm.Data.Actions.ToString();
+		Intrigue.RefreshResourceDisplay(mgm.Data.Intrigue);
+		Wealth.RefreshResourceDisplay(mgm.Data.Wealth);
+		Influence.RefreshResourceDisplay(mgm.Data.Influence);
+		Mandate.RefreshResourceDisplay(mgm.Data.Mandate);
+		Legacy.RefreshResourceDisplay(mgm.Data.Legacy);
 
-		Culture.RefreshResourceDisplay(mgm.Data.CorporateCulture);
-		Spreadsheets.RefreshResourceDisplay(mgm.Data.Spreadsheets);
-		Patents.RefreshResourceDisplay(mgm.Data.Patents);
-		Brand.RefreshResourceDisplay(mgm.Data.Brand);
-		Revanue.RefreshResourceDisplay(mgm.Data.Revenue);
-
-		Hornical.RefreshResourceDisplay(mgm.Data.Hornical);
-
-		string timeOfDay = mgm.Data.TurnNumber % 2 == 1 ? "Afternoon" : "Morning";
 		var DateTime = mgm.GetDateFromTurnNumber();
-		Time.text = $"{timeOfDay}";
-		Day.text = $"{DateTime.DayOfWeek}";
-		Month.text = $"{DateTime:MMMM} {DateTime.Day}";
+		Month.text = $"{DateTime:MMMM}";
+		Year.text = $"{DateTime:yyyy}";
 	}
 }
