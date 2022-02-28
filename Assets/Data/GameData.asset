@@ -26,17 +26,7 @@ MonoBehaviour:
   Brand: 0
   Revenue: 0
   Hornical: 0
-  Promotion: 0
-  Home: 0
-  Car: 0
-  Suits: 0
-  JewleryCuffs: 0
-  JewleryPen: 0
-  JewleryRing: 0
-  JewleryWatch: 0
-  PlayerPromotionLevels: []
-  PlayerHomeLevels: []
-  MyOffice: {fileID: 0}
-  MyHome: {fileID: 0}
-  Locations: []
+  Locations:
+  - {fileID: 11400000, guid: 00bcc48356d344344ab78acfd4b1d01f, type: 2}
+  - {fileID: 11400000, guid: c7b1fbe41300f684f87f8e97f15aa7fb, type: 2}
   StartOfTurnInteractions: []

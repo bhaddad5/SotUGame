@@ -33,7 +33,6 @@ namespace Assets.GameModel
 		public bool Trained;
 	}
 
-	[CreateAssetMenu(fileName = "New Interaction", menuName = "Company Man Data/NPC", order = 1)]
 	[Serializable]
 	public class Npc : ScriptableObject
 	{
@@ -75,7 +74,6 @@ namespace Assets.GameModel
 		public bool Exists = true;
 
 		public List<Interaction> Interactions = new List<Interaction>();
-		public List<Trophy> Trophies = new List<Trophy>();
 
 		public List<Texture2D> IndependentImages = new List<Texture2D>();
 		public List<Texture2D> ControlledImages = new List<Texture2D>();
@@ -93,8 +91,6 @@ namespace Assets.GameModel
 			Pride = StartingPride;
 
 			foreach (var ob in Interactions)
-				ob.Setup();
-			foreach (var ob in Trophies)
 				ob.Setup();
 		}
 

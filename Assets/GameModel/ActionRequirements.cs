@@ -55,7 +55,6 @@ namespace Assets.GameModel
 		public List<Npc> RequiredNpcsControled;
 		public List<Npc> RequiredNpcsTrained;
 		public List<Npc> RequiredNpcsNotControled;
-		public List<Trophy> RequiredTrophies;
 
 		public bool VisRequirementsAreMet()
 		{
@@ -117,13 +116,7 @@ namespace Assets.GameModel
 				if (!interactionDept.Controlled)
 					return false;
 			}
-
-			foreach (var trophy in RequiredTrophies)
-			{
-				if (!mgm.Data.GetOwnedTrophies().Contains(trophy))
-					return false;
-			}
-
+			
 			foreach (var policy in RequiredPolicies)
 			{
 				if (!policy.Active)
@@ -132,10 +125,7 @@ namespace Assets.GameModel
 
 			if (mgm.Data.Power < RequiredPower)
 				return false;
-
-			if (mgm.Data.Promotion < RequiredPromotionLevel)
-				return false;
-
+			
 			if (mgm.Data.TurnNumber < RequiredTurnNumber)
 				return false;
 

@@ -10,7 +10,7 @@ public class CreateInteractionWindow : EditorWindow
 {
 	private static CreateInteractionWindow window;
 
-	[MenuItem("Company Man/Create Interaction")]
+	[MenuItem("Selectacorp/Create Interaction")]
 
 	static void Init()
 	{

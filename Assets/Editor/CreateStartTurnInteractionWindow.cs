@@ -10,7 +10,7 @@ public class CreateStartTurnInteractionWindow : EditorWindow
 {
 	private static CreateStartTurnInteractionWindow window;
 
-	[MenuItem("Company Man/Create Automatic Start of Turn Event")]
+	[MenuItem("Selectacorp/Create Automatic Start of Turn Event")]
 
 	static void Init()
 	{

@@ -10,7 +10,7 @@ public class CreateMissionWindow : EditorWindow
 {
 	private static CreateMissionWindow window;
 
-	[MenuItem("Company Man/Create Mission")]
+	[MenuItem("Selectacorp/Create Mission")]
 
 	static void Init()
 	{

@@ -87,7 +87,7 @@ namespace Assets.GameModel
 			if (Data.TurnNumber % 2 == 0 && 
 			    (dateTime.Day == 15 || dateTime.Day == DateTime.DaysInMonth(dateTime.Year, dateTime.Month)))
 			{
-				HandleBiMonthlyChange();
+				//TODO: Elections!
 			}
 
 			string path = LoadSaveHelpers.FileToValidPath("Autosave");
@@ -121,12 +121,7 @@ namespace Assets.GameModel
 				}
 			}
 		}
-
-		private void HandleBiMonthlyChange()
-		{
-			Data.Funds += Data.PlayerPromotionLevels[Data.Promotion].Salary;
-		}
-
+		
 		public DateTime GetDateFromTurnNumber()
 		{
 			var currentDate = new DateTime(2030, 7, 1);

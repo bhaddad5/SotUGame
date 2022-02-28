@@ -24,12 +24,6 @@ namespace Assets.GameModel.UiDisplayers
 		[SerializeField] private LocationNpcEntryBindings _npcButtonPrefab;
 		[SerializeField] private NpcScreenBindings _npcUiPrefab;
 		
-		[SerializeField] private TrophyCaseBindings TrophyCasePrefab;
-		private TrophyCaseBindings trophyCase;
-
-		[SerializeField] private StatusSymbolsBindings StatusSymbolsPrefab;
-		private StatusSymbolsBindings statusSymbols;
-
 		private Location loc;
 		public bool IsAccessible(MainGameManager mgm) => loc.IsAccessible(mgm);
 
@@ -53,18 +47,6 @@ namespace Assets.GameModel.UiDisplayers
 
 			if (loc.Missions.Count == 0)
 				MissionsButton.gameObject.SetActive(false);
-			
-			if (loc.ShowTrophyCase)
-			{
-				trophyCase = Instantiate(TrophyCasePrefab);
-				trophyCase.UpdateVisuals(mgm);
-			}
-
-			if (loc.ShowCar)
-			{
-				statusSymbols = Instantiate(StatusSymbolsPrefab);
-				statusSymbols.UpdateVisuals(mgm);
-			}
 		}
 
 		public void CloseCurrentLocation()
@@ -75,10 +57,6 @@ namespace Assets.GameModel.UiDisplayers
 
 		void OnDestroy()
 		{
-			if (trophyCase != null)
-				GameObject.Destroy(trophyCase.gameObject);
-			if(statusSymbols != null)
-				GameObject.Destroy(statusSymbols.gameObject);
 			if(currNpc != null)
 				GameObject.Destroy(currNpc);
 		}
@@ -116,17 +94,8 @@ namespace Assets.GameModel.UiDisplayers
 
 		public void RefreshUiDisplay(MainGameManager mgm)
 		{
-			if (loc.ShowMyOfficeCustomBackground)
-				BackgroundImage.sprite = mgm.Data.PlayerPromotionLevels[mgm.Data.Promotion].PlayerOfficeBackground.ToSprite();
-			else if (loc.ShowMyHome)
-				BackgroundImage.sprite = mgm.Data.PlayerHomeLevels[mgm.Data.Home].BackgroundImage.ToSprite();
-			else
-				BackgroundImage.sprite = loc.BackgroundImage.ToSprite();
-
-			if (loc.ShowMyHome)
-				Name.text = $"My Home - {mgm.Data.PlayerHomeLevels[mgm.Data.Home].HomeName}";
-			else
-				Name.text = loc.Name;
+			BackgroundImage.sprite = loc.BackgroundImage.ToSprite();
+			Name.text = loc.Name;
 			Description.text = loc.Description;
 			if (loc.Controlled)
 				Name.text += $" (Controlled)";

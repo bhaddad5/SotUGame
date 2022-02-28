@@ -22,16 +22,6 @@ namespace Assets.GameModel.Save
 		public float Revenue;
 		public int Hornical;
 
-		public int Promotion;
-		public int Home;
-
-		public int Car;
-		public int Suits;
-		public bool JewleryCuffs;
-		public bool JewleryPen;
-		public bool JewleryRing;
-		public bool JewleryWatch;
-
 		public List<SavedLocationState> Locations;
 		public List<SavedInteractionState> StartTurnInteractions;
 
@@ -51,15 +41,6 @@ namespace Assets.GameModel.Save
 			res.Brand = data.Brand;
 			res.Revenue = data.Revenue;
 			res.Hornical = data.Hornical;
-			res.Promotion = data.Promotion;
-			res.Home = data.Home;
-
-			res.Car = data.Car;
-			res.Suits = data.Suits;
-			res.JewleryCuffs = data.JewleryCuffs;
-			res.JewleryPen = data.JewleryPen;
-			res.JewleryRing = data.JewleryRing;
-			res.JewleryWatch = data.JewleryWatch;
 
 			res.Locations = new List<SavedLocationState>();
 			foreach (var dataLocation in data.Locations)
@@ -92,15 +73,6 @@ namespace Assets.GameModel.Save
 			data.Brand = Brand;
 			data.Revenue = Revenue;
 			data.Hornical = Hornical;
-			data.Promotion = Promotion;
-			data.Home = Home;
-
-			data.Car = Car;
-			data.Suits = Suits;
-			data.JewleryCuffs = JewleryCuffs;
-			data.JewleryPen = JewleryPen;
-			data.JewleryRing = JewleryRing;
-			data.JewleryWatch = JewleryWatch;
 
 			foreach (var location in Locations)
 			{
@@ -248,7 +220,6 @@ namespace Assets.GameModel.Save
 		public bool Trained;
 
 		public List<SavedInteractionState> Interactions;
-		public List<SavedTrophyState> Trophies;
 
 		public static SavedNpcState FromData(Npc data)
 		{
@@ -266,14 +237,7 @@ namespace Assets.GameModel.Save
 				if (dataInteraction != null)
 					res.Interactions.Add(SavedInteractionState.FromData(dataInteraction));
 			}
-
-			res.Trophies = new List<SavedTrophyState>();
-			foreach (var dataTrophy in data.Trophies)
-			{
-				if (dataTrophy != null)
-					res.Trophies.Add(SavedTrophyState.FromData(dataTrophy));
-			}
-
+			
 			return res;
 		}
 
@@ -295,40 +259,9 @@ namespace Assets.GameModel.Save
 			{
 				interaction.ApplyToData(data.Interactions.FirstOrDefault(d => d?.Id == interaction.Id));
 			}
-			foreach (var trophy in Trophies)
-			{
-				trophy.ApplyToData(data.Trophies.FirstOrDefault(d => d?.Id == trophy.Id));
-			}
 		}
 	}
-
-	[Serializable]
-	public struct SavedTrophyState
-	{
-		public string Id;
-
-		public bool Owned;
-
-		public static SavedTrophyState FromData(Trophy data)
-		{
-			var res = new SavedTrophyState();
-			res.Id = data.Id;
-			res.Owned = data.Owned;
-
-			return res;
-		}
-
-		public void ApplyToData(Trophy data)
-		{
-			if (data == null)
-			{
-				Debug.Log($"Could not find interaction with id {Id}");
-				return;
-			}
-			data.Owned = Owned;
-		}
-	}
-
+	
 	[Serializable]
 	public struct SavedInteractionState
 	{

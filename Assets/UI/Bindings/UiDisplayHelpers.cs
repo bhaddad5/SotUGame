@@ -135,13 +135,7 @@ namespace Assets.GameModel.UiDisplayers
 				if (!ob.Trained)
 					tooltips.Add($"{ob.FirstName} Trained");
 			}
-
-			foreach (var ob in req.RequiredTrophies)
-			{
-				if (!ob.Owned)
-					tooltips.Add($"{ob.Name}");
-			}
-
+			
 			foreach (var requiredPolicy in req.RequiredPolicies)
 			{
 				if (!requiredPolicy.Active)

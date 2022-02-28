@@ -45,22 +45,11 @@ public class HudBindings : MonoBehaviour
 		MainMenuButton.onClick.AddListener(OpenMainMenu);
 	}
 
-	public void Rest()
+	public void EndTurn()
 	{
-		mgm.Data.Ego += 5;
 		mgm.HandleTurnChange();
 	}
-
-	public void OpenMyOffice()
-	{
-		mapDisplay.ShowDepartment(mgm.Data.MyOffice, mgm);
-	}
-
-	public void OpenMyHome()
-	{
-		mapDisplay.ShowDepartment(mgm.Data.MyHome, mgm);
-	}
-
+	
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
@@ -88,7 +77,6 @@ public class HudBindings : MonoBehaviour
 	public void RefreshUiDisplay(MainGameManager mgm)
 	{
 		PlayerName.text = $"{mgm.Data.FirstName} {mgm.Data.LastName}";
-		PlayerTitle.text = mgm.Data.PlayerPromotionLevels[mgm.Data.Promotion].Title;
 
 		Ego.RefreshResourceDisplay(mgm.Data.Ego);
 		Funds.RefreshResourceDisplay(mgm.Data.Funds);

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public static class ProfilingHelpers
 {
-	[MenuItem("Company Man Debugging/Get Control Interactions Of Selected Object")]
+	[MenuItem("Selectacorp Debugging/Get Control Interactions Of Selected Object")]
 	public static void GetLocationInteractions()
 	{
 		var gameData = AssetDatabase.LoadAssetAtPath<GameData>("Assets/Data/GameData.asset");
@@ -36,7 +36,7 @@ public static class ProfilingHelpers
 	}
 
 
-	[MenuItem("Company Man Debugging/Print Control and Completion Interactions")]
+	[MenuItem("Selectacorp Debugging/Print Control and Completion Interactions")]
 	public static void PrintControlInteractions()
 	{
 		var gameData = AssetDatabase.LoadAssetAtPath<GameData>("Assets/Data/GameData.asset");
@@ -55,8 +55,6 @@ public static class ProfilingHelpers
 						Debug.Log($"{ob} removed from game by {interaction}");
 					foreach (var ob in interaction.Result.Effect.LocationsToControl)
 						Debug.Log($"{ob} controlled by {interaction}");
-					foreach (var ob in interaction.Result.Effect.TrophiesClaimedReferences)
-						Debug.Log($"{ob} claimed by {interaction}");
 					foreach (var ob in interaction.Result.Effect.MissionsToComplete)
 						Debug.Log($"{ob} completed by {interaction}");
 				}
@@ -65,7 +63,7 @@ public static class ProfilingHelpers
 		Debug.Log("Upgrade Complete!");
 	}
 
-	[MenuItem("Company Man Debugging/Copy All Text")]
+	[MenuItem("Selectacorp Debugging/Copy All Text")]
 	public static void UpgradeOldData()
 	{
 		var gameData = AssetDatabase.LoadAssetAtPath<GameData>("Assets/Data/GameData.asset");
@@ -119,7 +117,7 @@ public static class ProfilingHelpers
 		Debug.Log("Copy Complete!  Paste it anywhere");
 	}
 
-	[MenuItem("Company Man Debugging/Calculate Power Totals")]
+	[MenuItem("Selectacorp Debugging/Calculate Power Totals")]
 	public static void CalculatePowerTotals()
 	{
 		var gameData = AssetDatabase.LoadAssetAtPath<GameData>("Assets/Data/GameData.asset");

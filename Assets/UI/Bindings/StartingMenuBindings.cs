@@ -22,7 +22,7 @@ public class StartingMenuBindings : MonoBehaviour
 	{
 		latestSave = LoadSaveHelpers.GetOrderedSaveFiles().FirstOrDefault();
 		ContinueGameButton.interactable = latestSave != null;
-		VersionText.text = $"Company Man v{MainGameManager.MajorVersion}.{MainGameManager.MinorVersion}.{MainGameManager.Patch} \"{MainGameManager.VersionName}\"";
+		VersionText.text = $"State of the Union v{MainGameManager.MajorVersion}.{MainGameManager.MinorVersion}.{MainGameManager.Patch} \"{MainGameManager.VersionName}\"";
 	}
 
 	public void NewGame()

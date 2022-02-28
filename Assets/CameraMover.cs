@@ -22,7 +22,7 @@ public class CameraMover : MonoBehaviour
 		{
 			var map = GameObject.Find("MainMapCanvas");
 
-			var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			var mousePos = Input.mousePosition;
 			var mousePosRelativeToMap = map.transform.InverseTransformPoint(mousePos);
 			var halfMapSize = map.GetComponent<RectTransform>().sizeDelta / 2f;
 

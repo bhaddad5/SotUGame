@@ -10,7 +10,7 @@ public class CreatePolicyWindow : EditorWindow
 {
 	private static CreatePolicyWindow window;
 
-	[MenuItem("Company Man/Create Policy")]
+	[MenuItem("Selectacorp/Create Policy")]
 
 	static void Init()
 	{

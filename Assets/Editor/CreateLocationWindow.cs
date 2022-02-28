@@ -10,7 +10,7 @@ public class CreateLocationWindow : EditorWindow
 {
 	private static CreateLocationWindow window;
 
-	[MenuItem("Company Man/Create Location")]
+	[MenuItem("Selectacorp/Create Location")]
 
 	static void Init()
 	{

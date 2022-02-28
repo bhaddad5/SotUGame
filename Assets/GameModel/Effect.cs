@@ -32,7 +32,6 @@ namespace Assets.GameModel
 		public List<Npc> NpcsToTrain;
 		public List<Npc> NpcsToRemoveFromGame;
 		public List<Location> LocationsToControl;
-		public List<Trophy> TrophiesClaimedReferences;
 		public List<Mission> MissionsToComplete;
 
 		public int Car;
@@ -64,12 +63,7 @@ namespace Assets.GameModel
 			mgm.Data.Brand = Mathf.Max(mgm.Data.Brand + BrandEffect, 0);
 			mgm.Data.Revenue = Mathf.Max(mgm.Data.Revenue + RevanueEffect, 0);
 			mgm.Data.Hornical = Mathf.Max(mgm.Data.Hornical + HornicalEffect, 0);
-
-			foreach (var trophy in TrophiesClaimedReferences)
-			{
-				trophy.Owned = true;
-			}
-
+			
 			foreach (var controlledNpc in NpcsToControl)
 			{
 				controlledNpc.Controlled = true;
@@ -101,26 +95,6 @@ namespace Assets.GameModel
 				mission.Completed = true;
 				mission.Effect.ExecuteEffect(mgm);
 			}
-
-			if (Car > 0)
-				mgm.Data.Car = Car;
-			if (Suits > 0)
-				mgm.Data.Suits = Suits;
-
-			if(JewleryCuffs)
-				mgm.Data.JewleryCuffs = true;
-			if(JewleryPen)
-				mgm.Data.JewleryPen = true;
-			if(JewleryRing)
-				mgm.Data.JewleryRing = true;
-			if(JewleryWatch)
-				mgm.Data.JewleryWatch = true;
-
-			if (Promotion > 0)
-				mgm.Data.Promotion = Promotion;
-
-			if(Home > 0)
-				mgm.Data.Home = Home;
 		}
 	}
 }
