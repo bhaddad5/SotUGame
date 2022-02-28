@@ -20,7 +20,7 @@ MonoBehaviour:
   Age: 0
   Bio: 
   LocationLayout:
-    xPos: 0.5
+    xPos: 0.2
     yPos: 0.5
     width: 200
   PersonalLayout:

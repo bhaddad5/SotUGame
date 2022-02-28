@@ -20,7 +20,7 @@ MonoBehaviour:
   Age: 0
   Bio: 
   LocationLayout:
-    xPos: 0.5
+    xPos: 0.8
     yPos: 0.5
     width: 200
   PersonalLayout:
@@ -41,5 +41,5 @@ MonoBehaviour:
   Opinion: 0
   Controlled: 0
   Exists: 1
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 0742b6f9a28645a4fbeaa13a059ad544, type: 3}
   Interactions: []
