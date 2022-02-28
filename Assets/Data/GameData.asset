@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a55a4a8471b4049aa28e80e0cb5a82, type: 3}
+  m_Name: GameData
+  m_EditorClassIdentifier: 
+  FirstName: Dildo
+  LastName: Swaggins
+  StartingEgo: 0
+  StartingFunds: 0
+  TurnNumber: 0
+  Ego: 0
+  Funds: 0
+  Power: 0
+  Patents: 0
+  CorporateCulture: 0
+  Spreadsheets: 0
+  Brand: 0
+  Revenue: 0
+  Hornical: 0
+  Promotion: 0
+  Home: 0
+  Car: 0
+  Suits: 0
+  JewleryCuffs: 0
+  JewleryPen: 0
+  JewleryRing: 0
+  JewleryWatch: 0
+  PlayerPromotionLevels: []
+  PlayerHomeLevels: []
+  MyOffice: {fileID: 0}
+  MyHome: {fileID: 0}
+  Locations: []
+  StartOfTurnInteractions: []
