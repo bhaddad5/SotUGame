@@ -23,7 +23,6 @@ public static class DefaultDataLogic
 						if (dialog.CustomBackground == null)
 						{
 							dialog.CustomBackground = npc.BackgroundImage;
-							dialog.CustomBackgroundNpcLayout = npc.PersonalLayout;
 						}
 
 						interaction.Result.Dialogs[i] = dialog;
@@ -38,7 +37,6 @@ public static class DefaultDataLogic
 						if (dialog.CustomBackground == null)
 						{
 							dialog.CustomBackground = npc.BackgroundImage;
-							dialog.CustomBackgroundNpcLayout = npc.PersonalLayout;
 						}
 
 						interaction.FailureResult.Dialogs[i] = dialog;

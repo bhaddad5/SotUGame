@@ -370,6 +370,6 @@ MonoBehaviour:
   MorningTint: {r: 0.84104663, g: 0.8742411, b: 0.9433962, a: 1}
   AfternoonTint: {r: 0.9245283, g: 0.88175714, b: 0.8503916, a: 1}
   MapImage: {fileID: 5377297756735892995}
-  DepartmentsParent: {fileID: 5377297757105657077}
+  LocationsParent: {fileID: 5377297757105657077}
   _locationButtonPrefab: {fileID: 4990158496178552730, guid: 95d90ae7ff7f7bf4fba58142146cbfc6, type: 3}
   _locationUiPrefab: {fileID: 8790881352909802722, guid: fef322424b105b84ca645e84037c2ad9, type: 3}

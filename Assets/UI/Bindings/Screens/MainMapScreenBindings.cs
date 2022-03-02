@@ -13,7 +13,7 @@ namespace Assets.GameModel.UiDisplayers
 		[SerializeField] private Color AfternoonTint;
 		[SerializeField] private Image MapImage;
 
-		[SerializeField] private Transform DepartmentsParent;
+		[SerializeField] private Transform LocationsParent;
 
 		[SerializeField] private MainMapLocationEntryBindings _locationButtonPrefab;
 		[SerializeField] private LocationScreenBindings _locationUiPrefab;
@@ -24,9 +24,8 @@ namespace Assets.GameModel.UiDisplayers
 			this.mgm = mgm;
 			foreach (Location dept in locations)
 			{
-				var d = Instantiate(_locationButtonPrefab);
+				var d = Instantiate(_locationButtonPrefab, LocationsParent);
 				d.Setup(dept, this, mgm);
-				d.transform.SetParent(DepartmentsParent, false);
 			}
 		}
 
@@ -54,7 +53,7 @@ namespace Assets.GameModel.UiDisplayers
 
 		public void RefreshUiDisplay(MainGameManager mgm)
 		{
-			foreach (var button in DepartmentsParent.GetComponentsInChildren<MainMapLocationEntryBindings>(true))
+			foreach (var button in LocationsParent.GetComponentsInChildren<MainMapLocationEntryBindings>(true))
 				button.RefreshUiDisplay(mgm);
 
 			if(_currOpenLocation != null)

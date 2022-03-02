@@ -8,8 +8,8 @@ namespace Assets.GameModel.UiDisplayers
 {
 	public class LocationNpcEntryBindings : MonoBehaviour
 	{
-		[SerializeField] private Button Button;
-		[SerializeField] private TMP_Text Text;
+		[SerializeField] private TMP_Text Name;
+		[SerializeField] private TMP_Text Title;
 		[SerializeField] private Image NpcPic;
 		[SerializeField] private GameObject NewIndicator;
 
@@ -18,17 +18,12 @@ namespace Assets.GameModel.UiDisplayers
 		private MainGameManager mgm;
 		private LocationScreenBindings deptUi;
 
-		//Dumb, but this doesn't work when called from Setup()
-		void Start()
-		{
-			npc.LocationLayout.ApplyToRectTransform(GetComponent<RectTransform>());
-		}
-
 		public void Setup(Npc npc, LocationScreenBindings deptUi, MainGameManager mgm)
 		{
 			this.npc = npc;
 			this.mgm = mgm;
 			this.deptUi = deptUi;
+			transform.position = npc.UiPosition;
 		}
 
 		public void OpenNpc()
@@ -38,9 +33,9 @@ namespace Assets.GameModel.UiDisplayers
 
 		public void RefreshUiDisplay(MainGameManager mgm)
 		{
-			Text.text = $"{npc.FirstName} {npc.LastName}";
-			if (!string.IsNullOrWhiteSpace(npc.Title))
-				Text.text = $"{npc.Title} {Text.text}";
+			Name.text = $"{npc.FirstName} {npc.LastName}";
+			Title.text = $"{npc.Title}";
+			Title.gameObject.SetActive(!string.IsNullOrWhiteSpace(npc.Title));
 			NpcPic.sprite = npc.Image;
 			gameObject.SetActive(npc.IsVisible(mgm));
 			NewIndicator.SetActive(npc.HasNewInteractions(mgm));

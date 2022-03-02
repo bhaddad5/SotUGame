@@ -19,15 +19,8 @@ MonoBehaviour:
   LastName: Rinewald
   Age: 0
   Bio: 
-  LocationLayout:
-    xPos: 0.8
-    yPos: 0.5
-    width: 200
-  PersonalLayout:
-    xPos: 0.5
-    yPos: 0.5
-    width: 200
   BackgroundImage: {fileID: 0}
+  UiPosition: {x: 717, y: 441}
   VisibilityRequirements:
     RequiredTurnNumber: 0
     RequiredMandate: 0

@@ -37,14 +37,10 @@ namespace Assets.GameModel
 		public int Age;
 		[TextArea(15, 20)]
 		public string Bio;
-
-		[Header("Screen Position in Department/Location")]
-		public NpcLayout LocationLayout = new NpcLayout() { width = 200, xPos = .5f, yPos = .5f };
-
-		[Header("Screen Position when talking to her")]
-		public NpcLayout PersonalLayout = new NpcLayout() { width = 200, xPos = .5f, yPos = .5f };
-
+		
 		public Sprite BackgroundImage;
+
+		public Vector2 UiPosition;
 
 		public ActionRequirements VisibilityRequirements;
 		

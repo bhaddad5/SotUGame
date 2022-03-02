@@ -30,8 +30,6 @@ namespace Assets.GameModel.UiDisplayers
 		{
 			this.npc = npc;
 			this.onClose = onClose;
-
-			this.npc.PersonalLayout.ApplyToRectTransform(Picture.GetComponent<RectTransform>());
 			
 			var allInteractions = new List<Interaction>(npc.Interactions);
 			allInteractions.RemoveAll(i => i == null);

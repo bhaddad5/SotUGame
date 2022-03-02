@@ -19,15 +19,8 @@ MonoBehaviour:
   LastName: Clerk
   Age: 0
   Bio: 
-  LocationLayout:
-    xPos: 0.2
-    yPos: 0.5
-    width: 200
-  PersonalLayout:
-    xPos: 0.5
-    yPos: 0.5
-    width: 200
   BackgroundImage: {fileID: 0}
+  UiPosition: {x: 464, y: 556}
   VisibilityRequirements:
     RequiredTurnNumber: 0
     RequiredMandate: 0
