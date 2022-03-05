@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Random = System.Random;
 
 namespace Assets.GameModel
 {
@@ -21,8 +20,6 @@ namespace Assets.GameModel
 		[TextArea(15, 20)]
 		public string Description;
 		
-		public Sprite BackgroundImage;
-
 		public Vector2 UiPosition;
 
 		public ActionRequirements VisibilityRequirements;
@@ -36,12 +33,9 @@ namespace Assets.GameModel
 
 		public Sprite Image;
 		public List<Interaction> Interactions = new List<Interaction>();
-		private MainGameManager mgm;
 
 		public void Setup(MainGameManager mgm)
 		{
-			this.mgm = mgm;
-
 			Controlled = false;
 			Exists = true;
 			Opinion = StartingOpinion;

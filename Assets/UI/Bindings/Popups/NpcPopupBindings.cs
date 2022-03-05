@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Assets.GameModel;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.GameModel.UiDisplayers
 {
-	public class NpcScreenBindings : MonoBehaviour
+	public class NpcPopupBindings : MonoBehaviour
 	{
 		[SerializeField] private TMP_Text Name;
 		[SerializeField] private TMP_Text Age;
@@ -18,8 +14,6 @@ namespace Assets.GameModel.UiDisplayers
 		[SerializeField] private TMP_Text Opinion;
 
 		[SerializeField] private Image Picture;
-		[SerializeField] private Image BackgroundImage;
-		[SerializeField] private Transform InfoBox;
 		[SerializeField] private Transform InteractionsParent;
 
 		[SerializeField] private NpcInteractionEntryBindings InteractionEntryPrefab;
@@ -32,11 +26,6 @@ namespace Assets.GameModel.UiDisplayers
 			this.onClose = onClose;
 			
 			var allInteractions = new List<Interaction>(npc.Interactions);
-			allInteractions.RemoveAll(i => i == null);
-			allInteractions.Sort((i1, i2) =>
-			{
-				return ((int)i1.Category).CompareTo((int)i2.Category);
-			});
 
 			foreach (var interaction in allInteractions)
 			{
@@ -48,21 +37,23 @@ namespace Assets.GameModel.UiDisplayers
 			}
 
 			Name.text = $"{this.npc.FirstName} {this.npc.LastName}";
+
+			if (!String.IsNullOrEmpty(this.npc.Title))
+				Name.text = $"{this.npc.Title} {Name.text}";
 			
 			if (this.npc.Controlled)
 				Name.text += " (Controlled)";
 
 			Age.text = $"{this.npc.Age} years old";
-			Opinion.text = $"Opinion: {this.npc.Opinion} of 5";
+			Opinion.text = $"Opinion: {this.npc.Opinion+1} of 5";
 			Picture.sprite = this.npc.Image;
 			Picture.preserveAspect = true;
 			Bio.text = $"Notes: {this.npc.Description}";
-			BackgroundImage.sprite = this.npc.BackgroundImage;
 		}
 
 		public void CloseNpc()
 		{
-			GameObject.Destroy(gameObject);
+			GameObject.Destroy(gameObject.transform.parent.gameObject);
 			onClose();
 		}
 	}

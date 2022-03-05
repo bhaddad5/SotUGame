@@ -1156,10 +1156,9 @@ MonoBehaviour:
   Description: {fileID: 347222331074260982}
   BackgroundImage: {fileID: 3246665705850483235}
   NpcOptionsParent: {fileID: 7800911843103427597}
-  PoliciesButton: {fileID: 0}
   PoliciesPopupPrefab: {fileID: 7490210916637936921, guid: fdbf56c0a95d8404cb7c3ff89b0165d5, type: 3}
   _npcButtonPrefab: {fileID: 5968674414041644095, guid: 3b3af6e3d3dd1c44a9458e8da8728fef, type: 3}
-  _npcUiPrefab: {fileID: 7869364957020369843, guid: 353a22882f1882e4a8e7d3075a51337c, type: 3}
+  _npcUiPrefab: {fileID: 1546372766764632974, guid: 49b659562636578438488b1c75462ab8, type: 3}
 --- !u!1 &7963822228974794017
 GameObject:
   m_ObjectHideFlags: 0

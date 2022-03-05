@@ -18,7 +18,7 @@ namespace Assets.GameModel.UiDisplayers
 		[SerializeField] private PoliciesPopupBindings PoliciesPopupPrefab;
 		
 		[SerializeField] private LocationNpcEntryBindings _npcButtonPrefab;
-		[SerializeField] private NpcScreenBindings _npcUiPrefab;
+		[SerializeField] private NpcPopupBindings _npcUiPrefab;
 		
 		private Location loc;
 		public bool IsAccessible(MainGameManager mgm) => loc.IsAccessible(mgm);
@@ -61,8 +61,9 @@ namespace Assets.GameModel.UiDisplayers
 		private GameObject currNpc;
 		public void ShowNpc(Npc npc, MainGameManager mgm)
 		{
-			currNpc = Instantiate(_npcUiPrefab).gameObject;
-			currNpc.GetComponent<NpcScreenBindings>().Setup(npc, mgm, () => RefreshUiDisplay(mgm));
+			var popupParent = GameObject.Instantiate(UiPrefabReferences.Instance.PopupOverlayParent).transform;
+			currNpc = Instantiate(_npcUiPrefab, popupParent).gameObject;
+			currNpc.GetComponent<NpcPopupBindings>().Setup(npc, mgm, () => RefreshUiDisplay(mgm));
 
 		}
 

@@ -16,19 +16,19 @@ namespace Assets.GameModel.UiDisplayers
 		[HideInInspector]
 		public Npc npc;
 		private MainGameManager mgm;
-		private LocationScreenBindings deptUi;
+		private LocationScreenBindings locationUI;
 
 		public void Setup(Npc npc, LocationScreenBindings deptUi, MainGameManager mgm)
 		{
 			this.npc = npc;
 			this.mgm = mgm;
-			this.deptUi = deptUi;
+			this.locationUI = deptUi;
 			transform.position = npc.UiPosition;
 		}
 
 		public void OpenNpc()
 		{
-			deptUi.ShowNpc(npc, mgm);
+			locationUI.ShowNpc(npc, mgm);
 		}
 
 		public void RefreshUiDisplay(MainGameManager mgm)

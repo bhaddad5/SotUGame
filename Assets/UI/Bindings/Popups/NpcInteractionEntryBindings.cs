@@ -16,16 +16,16 @@ namespace Assets.GameModel.UiDisplayers
 
 		private Interaction interaction;
 
-		private NpcScreenBindings npcUiDisplay;
+		private NpcPopupBindings npcUiDisplay;
 		private MainGameManager mgm;
 
-		public void Setup(Interaction interaction, MainGameManager mgm, NpcScreenBindings npcUiDisplay)
+		public void Setup(Interaction interaction, MainGameManager mgm, NpcPopupBindings npcUiDisplay)
 		{
 			this.interaction = interaction;
 			this.npcUiDisplay = npcUiDisplay;
 			this.mgm = mgm;
 
-			Text.text = $"{CategoryToString(interaction.Category)}: {interaction.Name}";
+			Text.text = $"{interaction.Name}";
 
 			if (interaction.CanFail)
 				Text.text += $" ({(int)((1f - interaction.ProbabilityOfFailureResult) * 100)}% chance)";
@@ -53,31 +53,6 @@ namespace Assets.GameModel.UiDisplayers
 					interaction.Completed++;
 				mgm.HandleTurnChange();
 			});
-		}
-
-		private string CategoryToString(Interaction.InteractionCategory category)
-		{
-			switch (category)
-			{
-				case Interaction.InteractionCategory.OfficePolitics:
-					return "OFFICE POLITICS";
-				case Interaction.InteractionCategory.Challenge:
-					return "CHALLENGE";
-				case Interaction.InteractionCategory.Conversation:
-					return "CONVERSATION";
-				case Interaction.InteractionCategory.Fun:
-					return "FUN";
-				case Interaction.InteractionCategory.Projects:
-					return "PROJECT";
-				case Interaction.InteractionCategory.Socialize:
-					return "SOCIALIZE";
-				case Interaction.InteractionCategory.Surveillance:
-					return "SURVEILLANCE";
-				case Interaction.InteractionCategory.Train:
-					return "TRAIN";
-			}
-
-			return "";
 		}
 
 		public string GetTooltip()

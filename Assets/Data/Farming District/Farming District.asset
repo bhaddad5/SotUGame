@@ -25,5 +25,9 @@ MonoBehaviour:
   Npcs:
   - {fileID: 11400000, guid: a392d85ea30a7164395f28af008e937f, type: 2}
   - {fileID: 11400000, guid: f2671ec0f8c765d41938fd616550011d, type: 2}
-  PartySupport: []
+  PartySupport:
+  - Party: {fileID: 11400000, guid: 34f5c062b1d813d449e3694fcb3dfb15, type: 2}
+    Support: 80
+  - Party: {fileID: 11400000, guid: 958ca37a2c1a85d4b94cc9ba183c8cdd, type: 2}
+    Support: 20
   Controlled: 0

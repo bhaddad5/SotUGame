@@ -17,9 +17,8 @@ MonoBehaviour:
   Title: Councilwoman
   FirstName: Judith
   LastName: Rinewald
-  Age: 0
-  Bio: 
-  BackgroundImage: {fileID: 0}
+  Age: 24
+  Description: Local Councilwoman, hates the mayor.
   UiPosition: {x: 717, y: 441}
   VisibilityRequirements:
     RequiredTurnNumber: 0

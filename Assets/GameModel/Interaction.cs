@@ -15,27 +15,11 @@ namespace Assets.GameModel
 		public string Name;
 
 		public bool AlertNew = true;
-
-		public enum InteractionCategory
-		{
-			Conversation = 1,
-			OfficePolitics = 0,
-			Socialize = 3,
-			Challenge = 2,
-			Projects = 4,
-			Train = 5,
-			Fun = 6,
-			Surveillance = 7,
-		}
-
-		public InteractionCategory Category;
-
+		
 		public ActionRequirements Requirements;
 		public ActionCost Cost;
 
 		public bool Repeatable = false;
-		
-		public bool PreviewEffect = false;
 
 		public InteractionResult Result;
 
