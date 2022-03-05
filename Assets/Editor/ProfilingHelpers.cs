@@ -65,7 +65,7 @@ public static class ProfilingHelpers
 		{
 			foreach (var npc in location.Npcs)
 			{
-				AllText += $"NPC BIO - {npc.name}: {npc.Bio}\n\n";
+				AllText += $"NPC BIO - {npc.name}: {npc.Description}\n\n";
 
 				foreach (var interaction in npc.Interactions)
 				{

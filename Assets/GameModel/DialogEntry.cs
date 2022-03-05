@@ -22,8 +22,5 @@ namespace Assets.GameModel
 
 		[Header("Additional Options")]
 		public List<Sprite> CustomNpcImageOptions;
-		public Sprite CustomBackground;
-		public NpcLayout CustomBackgroundNpcLayout;
-
 	}
 }

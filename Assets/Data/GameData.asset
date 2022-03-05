@@ -14,18 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirstName: Dildo
   LastName: Swaggins
-  StartingEgo: 0
-  StartingFunds: 0
+  PartyName: 
+  StartingActions: 0
+  StartingIntrigue: 0
   TurnNumber: 0
-  Ego: 0
-  Funds: 0
-  Power: 0
-  Patents: 0
-  CorporateCulture: 0
-  Spreadsheets: 0
-  Brand: 0
-  Revenue: 0
-  Hornical: 0
+  Actions: 0
+  Intrigue: 0
+  Wealth: 0
+  Influence: 0
+  Mandate: 0
+  Legacy: 0
+  Parties:
+  - {fileID: 11400000, guid: 958ca37a2c1a85d4b94cc9ba183c8cdd, type: 2}
+  - {fileID: 11400000, guid: 895ef5c593a78194382ae89707bf84af, type: 2}
+  - {fileID: 11400000, guid: 34f5c062b1d813d449e3694fcb3dfb15, type: 2}
+  - {fileID: 11400000, guid: 9ba4373274767a248ab12242004fc955, type: 2}
   Locations:
   - {fileID: 11400000, guid: 00bcc48356d344344ab78acfd4b1d01f, type: 2}
   - {fileID: 11400000, guid: c7b1fbe41300f684f87f8e97f15aa7fb, type: 2}

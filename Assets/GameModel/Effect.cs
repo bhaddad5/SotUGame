@@ -24,6 +24,7 @@ namespace Assets.GameModel
 		public int MandateEffect;
 		public int LegacyEffect;
 
+		public List<PartyLocationSupport> SupportEffects;
 		public List<Npc> NpcsToControl;
 		public List<Npc> NpcsToRemoveFromGame;
 		

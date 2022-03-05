@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Farming District
   m_EditorClassIdentifier: 
   Id: 969657e8-d106-4024-bd3d-96f889db3b6a
-  Name: Farming District
+  Name: North Point
   Description: 
   Icon: {fileID: 21300000, guid: b15f48dec0c15fd438eac2b60fbbb9ba, type: 3}
   BackgroundImage: {fileID: 21300000, guid: 2e141aa9e35e60b49b12a24756590d28, type: 3}
@@ -25,8 +25,5 @@ MonoBehaviour:
   Npcs:
   - {fileID: 11400000, guid: a392d85ea30a7164395f28af008e937f, type: 2}
   - {fileID: 11400000, guid: f2671ec0f8c765d41938fd616550011d, type: 2}
-  ShowTrophyCase: 0
-  ShowCar: 0
-  ShowMyOfficeCustomBackground: 0
-  ShowMyHome: 0
+  PartySupport: []
   Controlled: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Slums District
   m_EditorClassIdentifier: 
   Id: bd56c595-5e00-455f-bfbc-297f8012fec7
-  Name: Slums District
+  Name: Hell's Acre
   Description: 
   Icon: {fileID: 21300000, guid: c850f0ba538645e4c9caab50bbfddd6f, type: 3}
   BackgroundImage: {fileID: 21300000, guid: 05f51b596d92bae4bba80b0568fc165d, type: 3}
@@ -23,8 +23,5 @@ MonoBehaviour:
   ClosedOnWeekends: 0
   Policies: []
   Npcs: []
-  ShowTrophyCase: 0
-  ShowCar: 0
-  ShowMyOfficeCustomBackground: 0
-  ShowMyHome: 0
+  PartySupport: []
   Controlled: 0

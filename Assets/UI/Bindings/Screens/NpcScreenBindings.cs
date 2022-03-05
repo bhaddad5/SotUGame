@@ -56,7 +56,7 @@ namespace Assets.GameModel.UiDisplayers
 			Opinion.text = $"Opinion: {this.npc.Opinion} of 5";
 			Picture.sprite = this.npc.Image;
 			Picture.preserveAspect = true;
-			Bio.text = $"Notes: {this.npc.Bio}";
+			Bio.text = $"Notes: {this.npc.Description}";
 			BackgroundImage.sprite = this.npc.BackgroundImage;
 		}
 

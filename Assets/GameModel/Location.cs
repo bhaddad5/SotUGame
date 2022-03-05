@@ -6,6 +6,13 @@ using UnityEngine;
 namespace Assets.GameModel
 {
 	[Serializable]
+	public struct PartyLocationSupport
+	{
+		public Party Party;
+		public int Support;
+	}
+
+	[Serializable]
 	public class Location : ScriptableObject
 	{
 		[HideInInspector]
@@ -27,10 +34,7 @@ namespace Assets.GameModel
 		public List<Policy> Policies = new List<Policy>();
 		public List<Npc> Npcs = new List<Npc>();
 
-		public bool ShowTrophyCase;
-		public bool ShowCar;
-		public bool ShowMyOfficeCustomBackground;
-		public bool ShowMyHome;
+		public List<PartyLocationSupport> PartySupport = new List<PartyLocationSupport>();
 
 		[HideInInspector]
 		public bool Controlled;
@@ -43,6 +47,22 @@ namespace Assets.GameModel
 				ob.Setup(mgm);
 			foreach (var ob in Policies)
 				ob.Setup();
+
+			int totalSupport = 0;
+			HashSet<Party> supportedParties = new HashSet<Party>();
+			foreach (var support in PartySupport)
+			{
+				if (supportedParties.Contains(support.Party))
+					throw new Exception($"{support.Party.Name} has multiple entries in {Name}.  It can only have one.");
+				supportedParties.Add(support.Party);
+
+				totalSupport += support.Support;
+			}
+
+			if (totalSupport != 100)
+			{
+				throw new Exception($"Total Party Support in {Name} is not equal to 100!  Ensure that the total equals that.");
+			}
 		}
 		
 		public bool IsVisible(MainGameManager mgm)

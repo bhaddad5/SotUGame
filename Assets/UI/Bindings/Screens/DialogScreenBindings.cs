@@ -75,16 +75,8 @@ public class DialogScreenBindings : MonoBehaviour
 			NpcImage.gameObject.SetActive(false);
 		}
 
-		if (dialog.CustomBackground != null)
-		{
-			NpcBackground.sprite = dialog.CustomBackground;
-			dialog.CustomBackgroundNpcLayout.ApplyToRectTransform(NpcImage.GetComponent<RectTransform>());
-		}
-		else
-		{
-			NpcBackground.gameObject.SetActive(false);
-			BlackBackground.gameObject.SetActive(false);
-		}
+		NpcBackground.gameObject.SetActive(false);
+		BlackBackground.gameObject.SetActive(false);
 
 		foreach (var c in textToShow)
 		{

@@ -26,6 +26,7 @@ namespace Assets.GameModel
 
 		[HideInInspector] public int Legacy = 0;
 
+		public List<Party> Parties = new List<Party>();
 		public List<Location> Locations = new List<Location>();
 		public List<Interaction> StartOfTurnInteractions = new List<Interaction>();
 

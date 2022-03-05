@@ -7,23 +7,6 @@ using Random = System.Random;
 namespace Assets.GameModel
 {
 	[Serializable]
-	public struct NpcLayout
-	{
-		public float xPos;
-		public float yPos;
-		public float width;
-
-		public void ApplyToRectTransform(RectTransform rt)
-		{
-			var ratio = 2;
-			rt.anchorMin = new Vector2(xPos, yPos);
-			rt.anchorMax = new Vector2(xPos, yPos);
-			rt.sizeDelta = new Vector2(width, width * ratio);
-			rt.anchoredPosition = Vector2.zero;
-		}
-	}
-	
-	[Serializable]
 	public class Npc : ScriptableObject
 	{
 		[HideInInspector]
@@ -36,7 +19,7 @@ namespace Assets.GameModel
 		public string LastName;
 		public int Age;
 		[TextArea(15, 20)]
-		public string Bio;
+		public string Description;
 		
 		public Sprite BackgroundImage;
 
