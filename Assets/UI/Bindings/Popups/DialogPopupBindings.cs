@@ -18,11 +18,16 @@ namespace Assets.GameModel.UiDisplayers
 		private DialogDisplayer currDialog = null;
 
 		private Action onClose;
-		public void Setup(Npc npc, InteractionResult res, Action onClose)
+		public void Setup(Npc npc, InteractionResult res, MainGameManager mgm, Action onClose)
 		{
 			this.onClose = onClose;
 			Picture.sprite = npc.Image;
 
+			StartCoroutine(DisplayAllDialogs(res, mgm));
+		}
+
+		private IEnumerator DisplayAllDialogs(InteractionResult res, MainGameManager mgm)
+		{
 			foreach (var dialog in res.Dialogs)
 			{
 				if (dialog.CurrSpeaker == DialogEntry.Speaker.Player)
@@ -32,7 +37,7 @@ namespace Assets.GameModel.UiDisplayers
 				else if (dialog.CurrSpeaker == DialogEntry.Speaker.Npc)
 					currDialog = Instantiate(NpcDialogPrefab, DialogTextParent);
 
-				currDialog.DisplayDialog(dialog.Text);
+				yield return currDialog.DisplayDialog(dialog.Text, mgm);
 			}
 		}
 

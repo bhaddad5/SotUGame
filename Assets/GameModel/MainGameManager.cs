@@ -108,7 +108,7 @@ namespace Assets.GameModel
 			{
 				if (startOfTurnInteraction.InteractionValid(this))
 				{
-					bool succeeded = startOfTurnInteraction.GetInteractionSucceeded();
+					/*bool succeeded = startOfTurnInteraction.GetInteractionSucceeded();
 					var res = startOfTurnInteraction.GetInteractionResult(succeeded);
 					var displayHandler = new InteractionResultDisplayManager();
 					displayHandler.DisplayInteractionResult(startOfTurnInteraction.Completed, res, !succeeded, this, () =>
@@ -117,7 +117,7 @@ namespace Assets.GameModel
 						if(succeeded)
 							startOfTurnInteraction.Completed++;
 						RefreshAllUi();
-					});
+					});*/
 				}
 			}
 		}

@@ -49,7 +49,7 @@ namespace Assets.GameModel.UiDisplayers
 
 			var popupParent = GameObject.Instantiate(UiPrefabReferences.Instance.PopupOverlayParent).transform;
 			var dialogPrefab = Instantiate(DialogPopupPrefab, popupParent);
-			dialogPrefab.Setup(npc, res, () =>
+			dialogPrefab.Setup(npc, res, mgm, () =>
 			{
 				res.Execute(mgm);
 				if (succeeded)
