@@ -45,7 +45,7 @@ namespace Assets.GameModel.UiDisplayers
 				Name.text += " (Controlled)";
 
 			Age.text = $"{this.npc.Age} years old";
-			Opinion.text = $"Opinion: {this.npc.Opinion+1} of 5";
+			Opinion.text = $"Opinion: {this.npc.Opinion} of 5";
 			Picture.sprite = this.npc.Image;
 			Picture.preserveAspect = true;
 			Bio.text = $"Notes: {this.npc.Description}";

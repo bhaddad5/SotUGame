@@ -36,8 +36,8 @@ public static class DefaultDataLogic
 					for (int i = 0; i < interaction.Result.Effect.NpcEffects.Count; i++)
 					{
 						var npcEffect = interaction.Result.Effect.NpcEffects[i];
-						if (npcEffect.OptionalNpcReference == null)
-							npcEffect.OptionalNpcReference = npc;
+						if (npcEffect.NpcReference == null)
+							npcEffect.NpcReference = npc;
 						interaction.Result.Effect.NpcEffects[i] = npcEffect;
 					}
 				}
@@ -63,7 +63,7 @@ public static class DefaultDataLogic
 			for (int i = 0; i < interaction.Result.Effect.NpcEffects.Count; i++)
 			{
 				var npcEffect = interaction.Result.Effect.NpcEffects[i];
-				if (npcEffect.OptionalNpcReference == null)
+				if (npcEffect.NpcReference == null)
 					throw new Exception($"No npc reference provided for interaction {interaction}");
 			}
 		}

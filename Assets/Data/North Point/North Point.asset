@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e31a7af43be2e74caa015a46c0acfae, type: 3}
+  m_Name: North Point
+  m_EditorClassIdentifier: 
+  Id: 969657e8-d106-4024-bd3d-96f889db3b6a
+  Name: North Point
+  Description: 
+  Icon: {fileID: 21300000, guid: b15f48dec0c15fd438eac2b60fbbb9ba, type: 3}
+  BackgroundImage: {fileID: 21300000, guid: 2e141aa9e35e60b49b12a24756590d28, type: 3}
+  UiPosition: {x: 660, y: 617}
+  VisibilityInteractions: []
+  VisibilityNotCompletedInteractions: []
+  ClosedOnWeekends: 0
+  Policies: []
+  Npcs:
+  - {fileID: 11400000, guid: a392d85ea30a7164395f28af008e937f, type: 2}
+  - {fileID: 11400000, guid: f2671ec0f8c765d41938fd616550011d, type: 2}
+  - {fileID: 11400000, guid: d470041dd85da3b4793a998874c27ef5, type: 2}
+  - {fileID: 11400000, guid: af1c93898cdc3174d9f34ff6c175caf4, type: 2}
+  PartySupport:
+  - Party: {fileID: 11400000, guid: 34f5c062b1d813d449e3694fcb3dfb15, type: 2}
+    Support: 80
+  - Party: {fileID: 11400000, guid: 958ca37a2c1a85d4b94cc9ba183c8cdd, type: 2}
+    Support: 20
+  Controlled: 0

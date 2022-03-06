@@ -80,7 +80,8 @@ public class CreateNpcWindow : EditorWindow
 
 		AssetDatabase.CreateFolder($"{locFolder}", npc.NpcFileName().ToFolderName());
 		string npcFolder = Path.Combine(locFolder, npc.NpcFileName().ToFolderName());
-		
+		AssetDatabase.CreateFolder(npcFolder, "Interactions");
+
 		AssetDatabase.CreateAsset(npc, $"{npcFolder}/{npc.NpcFileName().ToFolderName()}.asset");
 		AssetDatabase.SaveAssets();
 	}

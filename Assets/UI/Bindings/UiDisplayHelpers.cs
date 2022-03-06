@@ -61,7 +61,7 @@ namespace Assets.GameModel.UiDisplayers
 				if (!String.IsNullOrEmpty(str))
 					str += "\n";
 
-				str += $"{npcEffect.OptionalNpcReference.FirstName} {npcEffect.OptionalNpcReference.LastName}: ";
+				str += $"{npcEffect.NpcReference.FirstName} {npcEffect.NpcReference.LastName}: ";
 
 				if (npcEffect.OpinionEffect != 0)
 					str += $"+{npcEffect.OpinionEffect} Opinion, ";

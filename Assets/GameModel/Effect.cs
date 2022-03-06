@@ -8,23 +8,31 @@ namespace Assets.GameModel
 	[Serializable]
 	public struct NpcEffect
 	{
-		[Header("Defaults to the interaction's NPC, if present")]
-		public Npc OptionalNpcReference;
+		public Npc NpcReference;
 		public int OpinionEffect;
+	}
+
+	[Serializable]
+	public struct SupportEffect
+	{
+		public Location Location;
+		public Party Party;
+		[Header("Other party's support levels will adjust automatically")]
+		public int SupportChange;
 	}
 
 	[Serializable]
 	public struct Effect
 	{
 		public List<NpcEffect> NpcEffects;
-		
+
 		public int IntrigueEffect;
 		public int WealthEffect;
 		public int InfluenceEffect;
 		public int MandateEffect;
 		public int LegacyEffect;
 
-		public List<PartyLocationSupport> SupportEffects;
+		public List<SupportEffect> SupportEffects;
 		public List<Npc> NpcsToControl;
 		public List<Npc> NpcsToRemoveFromGame;
 		
@@ -32,10 +40,10 @@ namespace Assets.GameModel
 		{
 			foreach (var effect in NpcEffects)
 			{
-				var clamp = Mathf.Clamp(effect.OptionalNpcReference.Opinion + effect.OpinionEffect, 1, 5);
-				effect.OptionalNpcReference.Opinion = Mathf.Max(clamp, 0);
+				var clamp = Mathf.Clamp(effect.NpcReference.Opinion + effect.OpinionEffect, 1, 5);
+				effect.NpcReference.Opinion = Mathf.Max(clamp, 0);
 				if (clamp == 5)
-					effect.OptionalNpcReference.Controlled = true;
+					effect.NpcReference.TakeControl(mgm);
 			}
 
 			mgm.Data.Intrigue = mgm.Data.Intrigue + IntrigueEffect;
@@ -46,7 +54,7 @@ namespace Assets.GameModel
 			
 			foreach (var controlledNpc in NpcsToControl)
 			{
-				controlledNpc.Controlled = true;
+				controlledNpc.TakeControl(mgm);
 			}
 
 			foreach (var removedNpc in NpcsToRemoveFromGame)

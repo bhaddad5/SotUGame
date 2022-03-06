@@ -33,6 +33,7 @@ namespace Assets.GameModel
 
 		public Sprite Image;
 		public List<Interaction> Interactions = new List<Interaction>();
+		public Effect OnControlEffect;
 
 		public void Setup(MainGameManager mgm)
 		{
@@ -60,6 +61,12 @@ namespace Assets.GameModel
 		public override string ToString()
 		{
 			return $"{FirstName} {LastName}";
+		}
+
+		public void TakeControl(MainGameManager mgm)
+		{
+			Controlled = true;
+			OnControlEffect.ExecuteEffect(mgm);
 		}
 	}
 }

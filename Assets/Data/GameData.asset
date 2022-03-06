@@ -15,8 +15,8 @@ MonoBehaviour:
   FirstName: Dildo
   LastName: Swaggins
   PartyName: 
-  StartingActions: 0
-  StartingIntrigue: 0
+  StartingActions: 5
+  StartingIntrigue: 4
   TurnNumber: 0
   Actions: 0
   Intrigue: 0
