@@ -212,6 +212,7 @@ MonoBehaviour:
   Button: {fileID: 1080067628396371443}
   Text: {fileID: 567320062399414576}
   NewIndicator: {fileID: 4603255956814823896}
+  DialogPopupPrefab: {fileID: 6484228758514293885, guid: dbbfd2474a7659546a923717fda74acf, type: 3}
 --- !u!114 &5375460548181435169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,8 +294,7 @@ MonoBehaviour:
   m_text: Continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad8097f281f2bf84c8d3f1837abd88c9, type: 2}
-  m_sharedMaterial: {fileID: -7765544218037351673, guid: ad8097f281f2bf84c8d3f1837abd88c9,
-    type: 2}
+  m_sharedMaterial: {fileID: -7765544218037351673, guid: ad8097f281f2bf84c8d3f1837abd88c9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

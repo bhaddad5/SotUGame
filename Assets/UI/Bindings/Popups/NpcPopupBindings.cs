@@ -8,14 +8,13 @@ namespace Assets.GameModel.UiDisplayers
 {
 	public class NpcPopupBindings : MonoBehaviour
 	{
+		[SerializeField] private Image Picture;
+
 		[SerializeField] private TMP_Text Name;
 		[SerializeField] private TMP_Text Age;
 		[SerializeField] private TMP_Text Bio;
 		[SerializeField] private TMP_Text Opinion;
-
-		[SerializeField] private Image Picture;
 		[SerializeField] private Transform InteractionsParent;
-
 		[SerializeField] private NpcInteractionEntryBindings InteractionEntryPrefab;
 
 		private Npc npc;
@@ -32,7 +31,7 @@ namespace Assets.GameModel.UiDisplayers
 				if (!interaction.InteractionVisible(mgm))
 					continue;
 				var interactButton = Instantiate(InteractionEntryPrefab);
-				interactButton.Setup(interaction, mgm, this);
+				interactButton.Setup(npc, interaction, mgm, CloseNpc);
 				interactButton.transform.SetParent(InteractionsParent);
 			}
 

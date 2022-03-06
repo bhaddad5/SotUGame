@@ -127,7 +127,7 @@ namespace Assets.GameModel
 			int elapsedYears = Data.TurnNumber / 12;
 			int elapsedMonths = Data.TurnNumber % 12;
 
-			var currentDate = new DateTime(2030 + elapsedYears, elapsedMonths, 1);
+			var currentDate = new DateTime(2030 + elapsedYears, elapsedMonths+1, 1);
 
 			return currentDate;
 		}

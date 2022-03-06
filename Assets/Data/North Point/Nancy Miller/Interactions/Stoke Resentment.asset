@@ -31,7 +31,20 @@ MonoBehaviour:
     InfluenceCost: 0
   Repeatable: 0
   Result:
-    Dialogs: []
+    Dialogs:
+    - CurrSpeaker: 1
+      OptionalNpcReference: {fileID: 11400000, guid: af1c93898cdc3174d9f34ff6c175caf4, type: 2}
+      Text: Your old HS rival sucks.   Join us, and we can rule this galaxy as Sugar
+        Daddy and Slut.
+      CustomNpcImageOptions: []
+    - CurrSpeaker: 0
+      OptionalNpcReference: {fileID: 11400000, guid: af1c93898cdc3174d9f34ff6c175caf4, type: 2}
+      Text: OK!
+      CustomNpcImageOptions: []
+    - CurrSpeaker: 2
+      OptionalNpcReference: {fileID: 11400000, guid: af1c93898cdc3174d9f34ff6c175caf4, type: 2}
+      Text: She is now with you.
+      CustomNpcImageOptions: []
     OptionalPopups: []
     Effect:
       NpcEffects:

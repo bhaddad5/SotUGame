@@ -37,7 +37,6 @@ namespace Assets.GameModel
 			Intrigue = StartingIntrigue;
 
 			Wealth = 0;
-			Intrigue = 0;
 			Influence = 0;
 			Mandate = 0;
 			Legacy = 0;

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Assets.GameModel;
 using TMPro;
@@ -14,16 +15,18 @@ namespace Assets.GameModel.UiDisplayers
 		[SerializeField] private TMP_Text Text;
 		[SerializeField] private GameObject NewIndicator;
 
+		[SerializeField] private DialogPopupBindings DialogPopupPrefab;
+
 		private Interaction interaction;
-
-		private NpcPopupBindings npcUiDisplay;
 		private MainGameManager mgm;
-
-		public void Setup(Interaction interaction, MainGameManager mgm, NpcPopupBindings npcUiDisplay)
+		private Action onDialogClose;
+		private Npc npc;
+		public void Setup(Npc npc, Interaction interaction, MainGameManager mgm, Action onDialogClose)
 		{
 			this.interaction = interaction;
-			this.npcUiDisplay = npcUiDisplay;
 			this.mgm = mgm;
+			this.npc = npc;
+			this.onDialogClose = onDialogClose;
 
 			Text.text = $"{interaction.Name}";
 
@@ -40,18 +43,18 @@ namespace Assets.GameModel.UiDisplayers
 
 		public void ExecuteInteraction()
 		{
-			GameObject.Destroy(npcUiDisplay.gameObject);
-
 			bool succeeded = interaction.GetInteractionSucceeded();
 			var res = interaction.GetInteractionResult(succeeded);
 			interaction.Cost.SubtractCost(mgm);
-			var displayHandler = new InteractionResultDisplayManager();
-			displayHandler.DisplayInteractionResult(interaction.Completed, res, !succeeded, mgm, () =>
+
+			var popupParent = GameObject.Instantiate(UiPrefabReferences.Instance.PopupOverlayParent).transform;
+			var dialogPrefab = Instantiate(DialogPopupPrefab, popupParent);
+			dialogPrefab.Setup(npc, res, () =>
 			{
 				res.Execute(mgm);
 				if (succeeded)
 					interaction.Completed++;
-				mgm.HandleTurnChange();
+				onDialogClose?.Invoke();
 			});
 		}
 
