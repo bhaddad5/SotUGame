@@ -55,6 +55,7 @@ namespace Assets.GameModel.UiDisplayers
 				if (succeeded)
 					interaction.Completed++;
 				onDialogClose?.Invoke();
+				mgm.RefreshAllUi();
 			});
 		}
 

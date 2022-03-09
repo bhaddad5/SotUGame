@@ -18,6 +18,7 @@ namespace Assets.GameModel.Save
 		public int Intrigue;
 		public int Wealth;
 		public int Influence;
+		public int Prestige;
 		public int Mandate;
 		public int Legacy;
 		
@@ -36,6 +37,7 @@ namespace Assets.GameModel.Save
 			res.Intrigue = data.Intrigue;
 			res.Wealth = data.Wealth;
 			res.Influence = data.Influence;
+			res.Prestige = data.Prestige;
 			res.Mandate = data.Mandate;
 			res.Legacy = data.Legacy;
 
@@ -65,6 +67,7 @@ namespace Assets.GameModel.Save
 			data.Intrigue = Intrigue;
 			data.Wealth = Wealth;
 			data.Influence = Influence;
+			data.Prestige = Prestige;
 			data.Mandate = Mandate;
 			data.Legacy = Legacy;
 

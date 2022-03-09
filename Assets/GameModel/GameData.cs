@@ -21,6 +21,7 @@ namespace Assets.GameModel
 
 		[HideInInspector] public int Wealth = 0;
 		[HideInInspector] public int Influence = 0;
+		[HideInInspector] public int Prestige = 0;
 
 		[HideInInspector] public int Mandate = 0;
 
@@ -38,6 +39,7 @@ namespace Assets.GameModel
 
 			Wealth = 0;
 			Influence = 0;
+			Prestige = 0;
 			Mandate = 0;
 			Legacy = 0;
 

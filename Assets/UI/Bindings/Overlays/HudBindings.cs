@@ -13,11 +13,11 @@ public class HudBindings : MonoBehaviour
 	[SerializeField] private TMP_Text PlayerName;
 	[SerializeField] private TMP_Text PartyName;
 	
-	[SerializeField] private TMP_Text Actions;
-
+	[SerializeField] private ResourceManagerUiDisplay Actions;
 	[SerializeField] private ResourceManagerUiDisplay Intrigue;
 	[SerializeField] private ResourceManagerUiDisplay Wealth;
 	[SerializeField] private ResourceManagerUiDisplay Influence;
+	[SerializeField] private ResourceManagerUiDisplay Prestige;
 	[SerializeField] private ResourceManagerUiDisplay Mandate;
 	[SerializeField] private ResourceManagerUiDisplay Legacy;
 
@@ -72,10 +72,11 @@ public class HudBindings : MonoBehaviour
 		PlayerName.text = $"{mgm.Data.FirstName} {mgm.Data.LastName}";
 		PartyName.text = $"{mgm.Data.PartyName} Party";
 
-		Actions.text = mgm.Data.Actions.ToString();
+		Actions.RefreshResourceDisplay(mgm.Data.Actions);
 		Intrigue.RefreshResourceDisplay(mgm.Data.Intrigue);
 		Wealth.RefreshResourceDisplay(mgm.Data.Wealth);
 		Influence.RefreshResourceDisplay(mgm.Data.Influence);
+		Prestige.RefreshResourceDisplay(mgm.Data.Prestige);
 		Mandate.RefreshResourceDisplay(mgm.Data.Mandate);
 		Legacy.RefreshResourceDisplay(mgm.Data.Legacy);
 

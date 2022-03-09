@@ -82,6 +82,8 @@ namespace Assets.GameModel.UiDisplayers
 				tooltips.Add($"${cost.WealthCost}M");
 			if (cost.InfluenceCost > mgm.Data.Influence)
 				tooltips.Add($"{cost.InfluenceCost} Influence");
+			if (cost.PrestigeCost > mgm.Data.Prestige)
+				tooltips.Add($"{cost.PrestigeCost} Prestige");
 
 			return TooltipsToString(tooltips);
 		}

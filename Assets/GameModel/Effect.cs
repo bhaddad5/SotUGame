@@ -29,6 +29,7 @@ namespace Assets.GameModel
 		public int IntrigueEffect;
 		public int WealthEffect;
 		public int InfluenceEffect;
+		public int PrestigeEffect;
 		public int MandateEffect;
 		public int LegacyEffect;
 
@@ -49,6 +50,7 @@ namespace Assets.GameModel
 			mgm.Data.Intrigue = mgm.Data.Intrigue + IntrigueEffect;
 			mgm.Data.Wealth = mgm.Data.Wealth + WealthEffect;
 			mgm.Data.Influence = mgm.Data.Influence + InfluenceEffect;
+			mgm.Data.Prestige = mgm.Data.Prestige + PrestigeEffect;
 			mgm.Data.Mandate = mgm.Data.Mandate + MandateEffect;
 			mgm.Data.Legacy = mgm.Data.Legacy + LegacyEffect;
 			

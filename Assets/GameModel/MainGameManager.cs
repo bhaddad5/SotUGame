@@ -73,7 +73,7 @@ namespace Assets.GameModel
 			Debug.Log("Data reset on quit");
 		}
 
-		private void RefreshAllUi()
+		public void RefreshAllUi()
 		{
 			hudUiDisplay.RefreshUiDisplay(this);
 			mainMapUiDisplay.RefreshUiDisplay(this);
@@ -82,6 +82,7 @@ namespace Assets.GameModel
 		public void HandleTurnChange()
 		{
 			Data.TurnNumber++;
+			Data.Actions = Data.StartingActions;
 			
 			var dateTime = GetDateFromTurnNumber();
 			if (Data.TurnNumber % 2 == 0 && 

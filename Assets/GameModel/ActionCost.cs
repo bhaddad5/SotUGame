@@ -13,19 +13,27 @@ namespace Assets.GameModel
 		public int IntrigueCost;
 		public int WealthCost;
 		public int InfluenceCost;
+		public int PrestigeCost;
 
 		public bool CanAffordCost(MainGameManager mgm)
 		{
+			if (mgm.Data.Actions <= 0)
+				return false;
+
 			return IntrigueCost <= mgm.Data.Intrigue &&
 			       WealthCost <= mgm.Data.Wealth &&
-			       InfluenceCost <= mgm.Data.Influence;
+			       InfluenceCost <= mgm.Data.Influence &&
+			       PrestigeCost <= mgm.Data.Prestige;
 		}
 
 		public void SubtractCost(MainGameManager mgm)
 		{
+			mgm.Data.Actions -= 1;
+
 			mgm.Data.Intrigue -= IntrigueCost;
 			mgm.Data.Wealth -= WealthCost;
 			mgm.Data.Influence -= InfluenceCost;
+			mgm.Data.Prestige -= PrestigeCost;
 		}
 	}
 }
