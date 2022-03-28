@@ -60,6 +60,7 @@
     <Compile Include="Assets\UI\Bindings\Popups\DialogDisplayer.cs" />
     <Compile Include="Assets\GameModel\Helpers\NullCleanupLogic.cs" />
     <Compile Include="Assets\CameraMover.cs" />
+    <Compile Include="Assets\UI\Bindings\Overlays\SupportUiDisplay.cs" />
     <Compile Include="Assets\UI System\TooltipCanvas.cs" />
     <Compile Include="Assets\GameModel\Helpers\DefaultDataLogic.cs" />
     <Compile Include="Assets\UI System\TooltipProviderBasic.cs" />
@@ -99,7 +100,6 @@
     <Compile Include="Assets\GameModel\GameData.cs" />
     <Compile Include="Assets\UI\Bindings\Screens\LocationNpcEntryBindings.cs" />
     <Compile Include="Assets\UI\Bindings\Popups\PopupBindings.cs" />
-    <Compile Include="Assets\UI\Bindings\Overlays\SupportUiDisplay.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

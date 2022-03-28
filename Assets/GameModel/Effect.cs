@@ -66,18 +66,18 @@ namespace Assets.GameModel
 
 			foreach (var effect in SupportEffects)
 			{
-				HandleSupportChange(effect);
+				effect.Location.PartySupport = HandleSupportChange(effect, effect.Location.PartySupport);
 			}
 		}
 
-		private void HandleSupportChange(SupportEffect effect)
+		private List<PartyLocationSupport> HandleSupportChange(SupportEffect effect, List<PartyLocationSupport> currLevels)
 		{
 			List<PartyLocationSupport> newSupportLevels = new List<PartyLocationSupport>();
 			//Make sure the relevant party is in here.
-			if(effect.Location.PartySupport.All(ps => ps.Party != effect.Party))
-				effect.Location.PartySupport.Add(new PartyLocationSupport(){Party = effect.Party, Support = 0});
+			if(currLevels.All(ps => ps.Party != effect.Party))
+				currLevels.Add(new PartyLocationSupport(){Party = effect.Party, Support = 0});
 
-			foreach (var partyLocationSupport in effect.Location.PartySupport)
+			foreach (var partyLocationSupport in currLevels)
 			{
 				var supp = partyLocationSupport;
 				if (partyLocationSupport.Party == effect.Party)
@@ -88,10 +88,20 @@ namespace Assets.GameModel
 				{
 					supp.Support += (supp.Support) * -effect.SupportChange;
 				}
-				newSupportLevels.Add(supp);
+				if(supp.Support >= .001f)
+					newSupportLevels.Add(supp);
 			}
 
-			effect.Location.PartySupport = newSupportLevels;
+			var hasCrushedParty = newSupportLevels.Any(sl => sl.Support < .05f);
+
+			if (hasCrushedParty)
+			{
+				var crushedParty = newSupportLevels.First(sl => sl.Support < .05f);
+				var crushEffect = new SupportEffect() { Location = effect.Location, Party = crushedParty.Party, SupportChange = -crushedParty.Support };
+				newSupportLevels = HandleSupportChange(crushEffect, newSupportLevels);
+			}
+
+			return newSupportLevels;
 		}
 	}
 }

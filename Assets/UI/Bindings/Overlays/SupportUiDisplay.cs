@@ -28,7 +28,6 @@ public class SupportUiDisplay : MonoBehaviour
 		{
 			var slice = GameObject.Instantiate(PartySupportPrefab, transform);
 			slice.color = supp.Party.color;
-			slice.GetComponent<TooltipProviderBasic>().Tooltip = supp.Party.Name;
 			slice.fillAmount = supp.Support;
 			slice.transform.localEulerAngles = new Vector3(0, 0, -(totalSupport * 360f));
 			totalSupport += supp.Support;
