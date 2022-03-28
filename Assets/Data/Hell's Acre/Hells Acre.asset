@@ -22,7 +22,8 @@ MonoBehaviour:
   VisibilityNotCompletedInteractions: []
   ClosedOnWeekends: 0
   Policies: []
-  Npcs: []
+  Npcs:
+  - {fileID: 11400000, guid: 802689931ef885b4a9a4963ac53b77cf, type: 2}
   PartySupport:
   - Party: {fileID: 11400000, guid: 9ba4373274767a248ab12242004fc955, type: 2}
     Support: 10

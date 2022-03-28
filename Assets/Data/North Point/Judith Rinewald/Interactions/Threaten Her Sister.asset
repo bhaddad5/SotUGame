@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd82948dc1c59274f942ff99737d3e88, type: 3}
+  m_Name: Threaten Her Sister
+  m_EditorClassIdentifier: 
+  Id: b736a8e4-3a67-4c7f-827b-4c248a163b5e
+  Name: Threaten Her Sister
+  AlertNew: 1
+  Requirements:
+    RequiredTurnNumber: 0
+    RequiredMandate: 0
+    RequiredInteractions: []
+    RequiredNotCompletedInteractions: []
+    RequiredPolicies: []
+    RequiredDepartmentsControled: []
+    RequiredNpcsControled:
+    - {fileID: 11400000, guid: 802689931ef885b4a9a4963ac53b77cf, type: 2}
+    RequiredNpcsTrained: []
+    RequiredNpcsNotControled: []
+  Cost:
+    IntrigueCost: 0
+    WealthCost: 0
+    InfluenceCost: 0
+    PrestigeCost: 0
+  Repeatable: 0
+  Result:
+    Dialogs:
+    - CurrSpeaker: 1
+      OptionalNpcReference: {fileID: 0}
+      Text: Join us.  Or else...
+      CustomNpcImageOptions: []
+    OptionalPopups: []
+    Effect:
+      NpcEffects: []
+      IntrigueEffect: 0
+      WealthEffect: 0
+      InfluenceEffect: 0
+      PrestigeEffect: 0
+      MandateEffect: 0
+      LegacyEffect: 0
+      SupportEffects: []
+      NpcsToControl:
+      - {fileID: 11400000, guid: f2671ec0f8c765d41938fd616550011d, type: 2}
+      NpcsToRemoveFromGame: []
+  CanFail: 0
+  ProbabilityOfFailureResult: 0
+  FailureResult:
+    Dialogs: []
+    OptionalPopups: []
+    Effect:
+      NpcEffects: []
+      IntrigueEffect: 0
+      WealthEffect: 0
+      InfluenceEffect: 0
+      PrestigeEffect: 0
+      MandateEffect: 0
+      LegacyEffect: 0
+      SupportEffects: []
+      NpcsToControl: []
+      NpcsToRemoveFromGame: []
+  Completed: 0
+  New: 1

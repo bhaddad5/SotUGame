@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd82948dc1c59274f942ff99737d3e88, type: 3}
+  m_Name: Investigate
+  m_EditorClassIdentifier: 
+  Id: 46f14f69-0ccd-4b1c-8d29-76847c59c0b8
+  Name: Investigate
+  AlertNew: 1
+  Requirements:
+    RequiredTurnNumber: 0
+    RequiredMandate: 0
+    RequiredInteractions: []
+    RequiredNotCompletedInteractions: []
+    RequiredPolicies: []
+    RequiredDepartmentsControled: []
+    RequiredNpcsControled: []
+    RequiredNpcsTrained: []
+    RequiredNpcsNotControled: []
+  Cost:
+    IntrigueCost: 0
+    WealthCost: 0
+    InfluenceCost: 0
+    PrestigeCost: 0
+  Repeatable: 0
+  Result:
+    Dialogs:
+    - CurrSpeaker: 2
+      OptionalNpcReference: {fileID: 0}
+      Text: She has a sister who's a hooker in Hell's Acre.
+      CustomNpcImageOptions: []
+    OptionalPopups: []
+    Effect:
+      NpcEffects: []
+      IntrigueEffect: 0
+      WealthEffect: 0
+      InfluenceEffect: 0
+      PrestigeEffect: 0
+      MandateEffect: 0
+      LegacyEffect: 0
+      SupportEffects: []
+      NpcsToControl: []
+      NpcsToRemoveFromGame: []
+  CanFail: 0
+  ProbabilityOfFailureResult: 0
+  FailureResult:
+    Dialogs: []
+    OptionalPopups: []
+    Effect:
+      NpcEffects: []
+      IntrigueEffect: 0
+      WealthEffect: 0
+      InfluenceEffect: 0
+      PrestigeEffect: 0
+      MandateEffect: 0
+      LegacyEffect: 0
+      SupportEffects: []
+      NpcsToControl: []
+      NpcsToRemoveFromGame: []
+  Completed: 0
+  New: 1

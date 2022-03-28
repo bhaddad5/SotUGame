@@ -14,6 +14,9 @@ namespace Assets.GameModel
 
 		public int StartingActions = 0;
 		public int StartingIntrigue = 0;
+		public int StartingWealth = 0;
+		public int StartingInfluence = 0;
+		public int StartingPrestige = 0;
 
 		[HideInInspector] public int TurnNumber = 0;
 		[HideInInspector] public int Actions = 0;
@@ -36,10 +39,10 @@ namespace Assets.GameModel
 			TurnNumber = 0;
 			Actions = StartingActions;
 			Intrigue = StartingIntrigue;
+			Wealth = StartingWealth;
+			Influence = StartingInfluence;
+			Prestige = StartingPrestige;
 
-			Wealth = 0;
-			Influence = 0;
-			Prestige = 0;
 			Mandate = 0;
 			Legacy = 0;
 

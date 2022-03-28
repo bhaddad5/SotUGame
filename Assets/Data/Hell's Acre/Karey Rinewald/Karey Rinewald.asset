@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 666a6c588bafc7c4f9378948d1a9a946, type: 3}
-  m_Name: Judith Rinewald
+  m_Name: Karey Rinewald
   m_EditorClassIdentifier: 
-  Id: f775573c-2a72-4ff3-8f54-8985487ef3a6
+  Id: 495c2a40-3689-45a0-846b-dba8d90c3dfb
   StartingOpinion: 0
-  Title: Councilwoman
-  FirstName: Judith
+  Title: 
+  FirstName: Karey
   LastName: Rinewald
-  Age: 24
-  Description: Local Councilwoman, hates the mayor.
-  UiPosition: {x: 717, y: 441}
+  Age: 19
+  Description: Hooker in Hell's Acre
+  UiPosition: {x: 600, y: 400}
   VisibilityRequirements:
     RequiredTurnNumber: 0
     RequiredMandate: 0
@@ -33,12 +33,10 @@ MonoBehaviour:
   Opinion: 0
   Controlled: 0
   Exists: 1
-  Image: {fileID: 21300000, guid: 0742b6f9a28645a4fbeaa13a059ad544, type: 3}
+  Image: {fileID: 21300000, guid: 902dab2ca96c7c5458f4f400f6d7817d, type: 3}
   Interactions:
-  - {fileID: 11400000, guid: bf9e2c0404981584d95b4fb23bbb0f77, type: 2}
-  - {fileID: 11400000, guid: 71e3fdd87a5329c4885936a78b2c344a, type: 2}
-  - {fileID: 11400000, guid: a3694f54b6fd7714fa4a9235e7ba1f7e, type: 2}
-  - {fileID: 11400000, guid: 2b3a4cc6bcd017c49a9290e8679791d5, type: 2}
+  - {fileID: 11400000, guid: 44c83bc976d6ea442849a48a63c49257, type: 2}
+  - {fileID: 11400000, guid: 6e1a43733033cc44185f167f74574da1, type: 2}
   OnControlEffect:
     NpcEffects: []
     IntrigueEffect: 0

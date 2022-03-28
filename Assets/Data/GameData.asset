@@ -17,11 +17,15 @@ MonoBehaviour:
   PartyName: 
   StartingActions: 5
   StartingIntrigue: 4
+  StartingWealth: 3
+  StartingInfluence: 1
+  StartingPrestige: 2
   TurnNumber: 0
   Actions: 0
   Intrigue: 0
   Wealth: 0
   Influence: 0
+  Prestige: 0
   Mandate: 0
   Legacy: 0
   Parties:
