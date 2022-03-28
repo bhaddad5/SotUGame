@@ -18,7 +18,7 @@ namespace Assets.GameModel
 		public Location Location;
 		public Party Party;
 		[Header("Other party's support levels will adjust automatically")]
-		public int SupportChange;
+		public float SupportChange;
 	}
 
 	[Serializable]
@@ -63,6 +63,35 @@ namespace Assets.GameModel
 			{
 				removedNpc.Exists = false;
 			}
+
+			foreach (var effect in SupportEffects)
+			{
+				HandleSupportChange(effect);
+			}
+		}
+
+		private void HandleSupportChange(SupportEffect effect)
+		{
+			List<PartyLocationSupport> newSupportLevels = new List<PartyLocationSupport>();
+			//Make sure the relevant party is in here.
+			if(effect.Location.PartySupport.All(ps => ps.Party != effect.Party))
+				effect.Location.PartySupport.Add(new PartyLocationSupport(){Party = effect.Party, Support = 0});
+
+			foreach (var partyLocationSupport in effect.Location.PartySupport)
+			{
+				var supp = partyLocationSupport;
+				if (partyLocationSupport.Party == effect.Party)
+				{
+					supp.Support += effect.SupportChange;
+				}
+				else
+				{
+					supp.Support += (supp.Support) * -effect.SupportChange;
+				}
+				newSupportLevels.Add(supp);
+			}
+
+			effect.Location.PartySupport = newSupportLevels;
 		}
 	}
 }

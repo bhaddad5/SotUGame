@@ -46,7 +46,7 @@ MonoBehaviour:
       SupportEffects:
       - Location: {fileID: 11400000, guid: 00bcc48356d344344ab78acfd4b1d01f, type: 2}
         Party: {fileID: 11400000, guid: 895ef5c593a78194382ae89707bf84af, type: 2}
-        SupportChange: 10
+        SupportChange: 0.1
       NpcsToControl: []
       NpcsToRemoveFromGame: []
   CanFail: 0

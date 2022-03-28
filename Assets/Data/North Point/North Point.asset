@@ -29,7 +29,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: af1c93898cdc3174d9f34ff6c175caf4, type: 2}
   PartySupport:
   - Party: {fileID: 11400000, guid: 34f5c062b1d813d449e3694fcb3dfb15, type: 2}
-    Support: 80
+    Support: 0.8
   - Party: {fileID: 11400000, guid: 958ca37a2c1a85d4b94cc9ba183c8cdd, type: 2}
-    Support: 20
+    Support: 0.2
   Controlled: 0

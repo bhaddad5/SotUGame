@@ -15,4 +15,4 @@ MonoBehaviour:
   Id: 4f66caf7-915e-468e-8f7d-df74b7ada9e4
   Name: Player Party
   Description: 
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0, g: 0.7845664, b: 1, a: 1}

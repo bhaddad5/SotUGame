@@ -19,7 +19,9 @@ namespace Assets.GameModel.UiDisplayers
 		
 		[SerializeField] private LocationNpcEntryBindings _npcButtonPrefab;
 		[SerializeField] private NpcPopupBindings _npcUiPrefab;
-		
+
+		[SerializeField] private SupportUiDisplay SupportUiDisplay;
+
 		private Location loc;
 		public bool IsAccessible(MainGameManager mgm) => loc.IsAccessible(mgm);
 
@@ -37,6 +39,8 @@ namespace Assets.GameModel.UiDisplayers
 				f.Setup(npc, this, mgm);
 				f.transform.SetParent(NpcOptionsParent);
 			}
+
+			SupportUiDisplay.Setup(loc, mgm);
 		}
 
 		public void CloseCurrentLocation()
@@ -92,6 +96,8 @@ namespace Assets.GameModel.UiDisplayers
 				else
 					npc.RefreshUiDisplay(mgm);
 			}
+
+			SupportUiDisplay.RefreshUiDisplay(mgm);
 		}
 	}
 }

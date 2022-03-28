@@ -9,7 +9,7 @@ namespace Assets.GameModel
 	public struct PartyLocationSupport
 	{
 		public Party Party;
-		public int Support;
+		public float Support;
 	}
 
 	[Serializable]
@@ -48,7 +48,7 @@ namespace Assets.GameModel
 			foreach (var ob in Policies)
 				ob.Setup();
 
-			int totalSupport = 0;
+			float totalSupport = 0;
 			HashSet<Party> supportedParties = new HashSet<Party>();
 			foreach (var support in PartySupport)
 			{
@@ -59,7 +59,7 @@ namespace Assets.GameModel
 				totalSupport += support.Support;
 			}
 
-			if (totalSupport != 100)
+			if (totalSupport != 1)
 			{
 				throw new Exception($"Total Party Support in {Name} is not equal to 100!  Ensure that the total equals that.");
 			}
