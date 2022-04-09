@@ -66,7 +66,7 @@ namespace Assets.GameModel
 
 			foreach (var effect in SupportEffects)
 			{
-				effect.Location.PartySupport = HandleSupportChange(effect, effect.Location.PartySupport);
+				effect.Location.PartySupport = NormalizeSupport(HandleSupportChange(effect, effect.Location.PartySupport));
 			}
 		}
 
@@ -102,6 +102,35 @@ namespace Assets.GameModel
 			}
 
 			return newSupportLevels;
+		}
+
+		private List<PartyLocationSupport> NormalizeSupport(List<PartyLocationSupport> currLevels)
+		{
+			float totalSupport = 0;
+			List<PartyLocationSupport> newSupportLevels = new List<PartyLocationSupport>();
+			foreach (var currLevel in currLevels)
+			{
+				totalSupport += ClampOutFraction(currLevel.Support);
+				newSupportLevels.Add(new PartyLocationSupport(){Party = currLevel.Party, Support = ClampOutFraction(currLevel.Support)});
+			}
+
+			if (totalSupport < 1)
+			{
+				var remainderRecievingParty = newSupportLevels.FirstOrDefault();
+				if (newSupportLevels.Any(sl => sl.Party.IsPlayerParty))
+					remainderRecievingParty = newSupportLevels.FirstOrDefault(sl => sl.Party.IsPlayerParty);
+				newSupportLevels.Remove(remainderRecievingParty);
+				newSupportLevels.Add(new PartyLocationSupport(){Party = remainderRecievingParty.Party, Support = remainderRecievingParty.Support + 1-totalSupport});
+			}
+
+			newSupportLevels = newSupportLevels.OrderByDescending(s => s.Support).ToList();
+
+			return newSupportLevels;
+		}
+
+		private float ClampOutFraction(float input)
+		{
+			return ((float)((int)(input * 100f))) / 100f;
 		}
 	}
 }

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6887897720060532404}
   - component: {fileID: 6267190390853436551}
+  - component: {fileID: 7984445360732299687}
+  - component: {fileID: 224550947009551736}
   m_Layer: 5
   m_Name: Support Display
   m_TagString: Untagged
@@ -49,3 +51,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PartySupportPrefab: {fileID: 4656655222102702329, guid: cd09ec3751e69904988635eb22d6b993, type: 3}
+  SupportTooltip: {fileID: 224550947009551736}
+--- !u!114 &7984445360732299687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9103939190950341632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d28d30e9987ee33488c3918bef7e81af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &224550947009551736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9103939190950341632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5059b0fadd11a641a95c011e1f0ec15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

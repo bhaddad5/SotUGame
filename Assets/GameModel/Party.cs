@@ -15,6 +15,7 @@ namespace Assets.GameModel
 		[TextArea(15, 20)]
 		public string Description;
 		public Color color;
+		public bool IsPlayerParty;
 
 	}
 }

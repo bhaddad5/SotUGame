@@ -7,11 +7,13 @@ using UnityEngine.UI;
 public class SupportUiDisplay : MonoBehaviour
 {
 	public Image PartySupportPrefab;
+	public TooltipProviderAdvanced SupportTooltip;
 
 	private Location loc;
 	public void Setup(Location loc, MainGameManager mgm)
 	{
 		this.loc = loc;
+		SupportTooltip.Setup(GetSupportTooltip);
 
 		RefreshUiDisplay(mgm);
 	}
@@ -32,5 +34,18 @@ public class SupportUiDisplay : MonoBehaviour
 			slice.transform.localEulerAngles = new Vector3(0, 0, -(totalSupport * 360f));
 			totalSupport += supp.Support;
 		}
+	}
+
+	public string GetSupportTooltip()
+	{
+		string res = "";
+		foreach (var support in loc.PartySupport)
+		{
+			res += $"{support.Party.Name}: {(support.Support * 100f).ToString("f0")}%\n";
+		}
+
+		//Remove trailing \n
+		res = res.Substring(0, res.Length - 1);
+		return res;
 	}
 }
