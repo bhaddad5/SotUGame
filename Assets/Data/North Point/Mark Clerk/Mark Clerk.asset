@@ -35,9 +35,9 @@ MonoBehaviour:
   Exists: 1
   Image: {fileID: 21300000, guid: faddccabed6461d41aeaf10b1404a17b, type: 3}
   Interactions:
-  - {fileID: 0}
   - {fileID: 11400000, guid: e8c737eba5404374fb27f9d50d82d42b, type: 2}
   - {fileID: 11400000, guid: 8e63f849c5364714489ee5fd8cf46c44, type: 2}
+  - {fileID: 11400000, guid: c956a73a37c87944c900674bd8051493, type: 2}
   OnControlEffect:
     NpcEffects: []
     IntrigueEffect: 0

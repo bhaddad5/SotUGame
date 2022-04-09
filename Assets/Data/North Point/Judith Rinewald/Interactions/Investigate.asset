@@ -34,8 +34,10 @@ MonoBehaviour:
   Result:
     Dialogs:
     - CurrSpeaker: 2
-      OptionalNpcReference: {fileID: 0}
-      Text: She has a sister who's a hooker in Hell's Acre.
+      OptionalNpcReference: {fileID: 11400000, guid: f2671ec0f8c765d41938fd616550011d, type: 2}
+      Text: Upon closer investigation, you've discovered that her younger sister,
+        Karey, is a Hooker in Hell's Acre.  Apparently Judith has been supporting
+        her.
       CustomNpcImageOptions: []
     OptionalPopups: []
     Effect:

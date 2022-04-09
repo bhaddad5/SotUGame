@@ -10,52 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd82948dc1c59274f942ff99737d3e88, type: 3}
-  m_Name: Arm Candy
+  m_Name: Bribe Him
   m_EditorClassIdentifier: 
-  Id: 0291e4ba-1aa9-4df6-ac5d-c1c6c11bfd0e
-  Name: Make Her Into Arm Candy
-  AlertNew: 1
+  Id: aecf2154-5b2e-4373-bde1-374f91380811
+  Name: Attempt to Bribe Him
+  AlertNew: 0
   Requirements:
     RequiredTurnNumber: 0
     RequiredMandate: 0
     RequiredInteractions: []
-    RequiredNotCompletedInteractions:
-    - {fileID: 11400000, guid: a6a8d60d7242b21438d204b9ccebbce4, type: 2}
-    - {fileID: 11400000, guid: da7390cab71942941b7e62165816b731, type: 2}
+    RequiredNotCompletedInteractions: []
     RequiredPolicies: []
     RequiredDepartmentsControled: []
-    RequiredNpcsControled:
-    - {fileID: 11400000, guid: af1c93898cdc3174d9f34ff6c175caf4, type: 2}
+    RequiredNpcsControled: []
     RequiredNpcsTrained: []
     RequiredNpcsNotControled: []
   Cost:
     IntrigueCost: 0
-    WealthCost: 0
+    WealthCost: 1
     InfluenceCost: 0
     PrestigeCost: 0
   Repeatable: 0
   Result:
     Dialogs:
-    - CurrSpeaker: 1
-      OptionalNpcReference: {fileID: 0}
-      Text: Some important men will be visiting your town in a few weeks.  Your job
-        is to look cute and show them a good time.
-      CustomNpcImageOptions: []
     - CurrSpeaker: 0
       OptionalNpcReference: {fileID: 0}
-      Text: A... good time?
-      CustomNpcImageOptions: []
-    - CurrSpeaker: 1
-      OptionalNpcReference: {fileID: 0}
-      Text: You know what I mean.  Now get on your knees and practice.
+      Text: I don't know who you think you are, but I'm an honest servant of god. 
+        I don't take bribes.
       CustomNpcImageOptions: []
     OptionalPopups: []
     Effect:
-      NpcEffects: []
+      NpcEffects:
+      - NpcReference: {fileID: 11400000, guid: d470041dd85da3b4793a998874c27ef5, type: 2}
+        OpinionEffect: -1
       IntrigueEffect: 0
       WealthEffect: 0
       InfluenceEffect: 0
-      PrestigeEffect: 2
+      PrestigeEffect: 0
       MandateEffect: 0
       LegacyEffect: 0
       SupportEffects: []

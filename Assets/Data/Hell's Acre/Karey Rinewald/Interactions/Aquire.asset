@@ -32,7 +32,15 @@ MonoBehaviour:
     PrestigeCost: 0
   Repeatable: 0
   Result:
-    Dialogs: []
+    Dialogs:
+    - CurrSpeaker: 1
+      OptionalNpcReference: {fileID: 0}
+      Text: I spoke to your pimp.  You belong to me now.
+      CustomNpcImageOptions: []
+    - CurrSpeaker: 0
+      OptionalNpcReference: {fileID: 0}
+      Text: OK...
+      CustomNpcImageOptions: []
     OptionalPopups: []
     Effect:
       NpcEffects: []

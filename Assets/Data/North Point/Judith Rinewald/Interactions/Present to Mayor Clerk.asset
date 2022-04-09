@@ -18,7 +18,8 @@ MonoBehaviour:
   Requirements:
     RequiredTurnNumber: 0
     RequiredMandate: 0
-    RequiredInteractions: []
+    RequiredInteractions:
+    - {fileID: 11400000, guid: c956a73a37c87944c900674bd8051493, type: 2}
     RequiredNotCompletedInteractions:
     - {fileID: 11400000, guid: 2b3a4cc6bcd017c49a9290e8679791d5, type: 2}
     RequiredPolicies: []
@@ -34,7 +35,21 @@ MonoBehaviour:
     PrestigeCost: 0
   Repeatable: 0
   Result:
-    Dialogs: []
+    Dialogs:
+    - CurrSpeaker: 1
+      OptionalNpcReference: {fileID: 0}
+      Text: I know you've spoken of your hatred for Councilwoman Rinewald.  Well,
+        I think it's time to get back at her.
+      CustomNpcImageOptions: []
+    - CurrSpeaker: 0
+      OptionalNpcReference: {fileID: 11400000, guid: f2671ec0f8c765d41938fd616550011d, type: 2}
+      Text: 'Hi there... sir.  I''m soooo sorry about that... misunderstanding...
+        where I accused you of groping me.
+
+
+        Please, can I make it up to
+        you?'
+      CustomNpcImageOptions: []
     OptionalPopups: []
     Effect:
       NpcEffects:

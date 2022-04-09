@@ -35,7 +35,16 @@ MonoBehaviour:
     PrestigeCost: 0
   Repeatable: 0
   Result:
-    Dialogs: []
+    Dialogs:
+    - CurrSpeaker: 2
+      OptionalNpcReference: {fileID: 0}
+      Text: 'It isn''t often that you find two sisters whoring side-by-side.  Many
+        visiting businessmen find the prospect intriguing.
+
+
+        That one sister
+        was once a successful up-and-coming politician doesn''t hurt either.'
+      CustomNpcImageOptions: []
     OptionalPopups: []
     Effect:
       NpcEffects: []

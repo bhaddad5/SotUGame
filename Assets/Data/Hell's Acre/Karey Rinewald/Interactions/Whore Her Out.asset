@@ -33,7 +33,12 @@ MonoBehaviour:
     PrestigeCost: 0
   Repeatable: 0
   Result:
-    Dialogs: []
+    Dialogs:
+    - CurrSpeaker: 1
+      OptionalNpcReference: {fileID: 0}
+      Text: It's time to put your ass to work.  Make back some of the money we spent
+        on it.
+      CustomNpcImageOptions: []
     OptionalPopups: []
     Effect:
       NpcEffects: []

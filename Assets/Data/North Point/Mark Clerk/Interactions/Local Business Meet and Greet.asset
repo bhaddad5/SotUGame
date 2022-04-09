@@ -33,7 +33,13 @@ MonoBehaviour:
     PrestigeCost: 0
   Repeatable: 0
   Result:
-    Dialogs: []
+    Dialogs:
+    - CurrSpeaker: 0
+      OptionalNpcReference: {fileID: 0}
+      Text: These find gentlemen are the pillars of the North Point community.  With
+        their support we can really drive your message home here and put this down
+        back on the map!
+      CustomNpcImageOptions: []
     OptionalPopups: []
     Effect:
       NpcEffects: []
@@ -43,7 +49,10 @@ MonoBehaviour:
       PrestigeEffect: 0
       MandateEffect: 0
       LegacyEffect: 0
-      SupportEffects: []
+      SupportEffects:
+      - Location: {fileID: 11400000, guid: 00bcc48356d344344ab78acfd4b1d01f, type: 2}
+        Party: {fileID: 11400000, guid: 895ef5c593a78194382ae89707bf84af, type: 2}
+        SupportChange: 10
       NpcsToControl: []
       NpcsToRemoveFromGame: []
   CanFail: 0

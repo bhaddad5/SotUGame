@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wives Club
   m_EditorClassIdentifier: 
   Id: f831ac0f-6a8a-4c81-954f-e64632f5c413
-  Name: Found the North Point Wives Organization
+  Name: Organize Wives & Mothers Club
   AlertNew: 1
   Requirements:
     RequiredTurnNumber: 0
@@ -27,13 +27,23 @@ MonoBehaviour:
     RequiredNpcsTrained: []
     RequiredNpcsNotControled: []
   Cost:
-    IntrigueCost: 0
+    IntrigueCost: 1
     WealthCost: 0
     InfluenceCost: 0
     PrestigeCost: 0
   Repeatable: 0
   Result:
-    Dialogs: []
+    Dialogs:
+    - CurrSpeaker: 0
+      OptionalNpcReference: {fileID: 0}
+      Text: 'Me and some of the other Party wives were thinking:'
+      CustomNpcImageOptions: []
+    - CurrSpeaker: 0
+      OptionalNpcReference: {fileID: 0}
+      Text: We would like to form a club to do outreach to other young women in the
+        area.  We want to show them the fulfillment they can gain be abandoning their
+        futile career attempts and settling down with a strong husband.
+      CustomNpcImageOptions: []
     OptionalPopups: []
     Effect:
       NpcEffects: []

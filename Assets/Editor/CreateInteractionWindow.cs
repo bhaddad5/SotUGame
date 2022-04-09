@@ -45,9 +45,8 @@ public class CreateInteractionWindow : EditorWindow
 
 		var foundNpc = npcPicker.Npc as Npc;
 
-		if (foundNpc == null)
+		if (foundNpc == null || interactionName == null)
 			return;
-
 
 		foundNpc.Interactions.Add(interaction);
 		EditorUtility.SetDirty(foundNpc);

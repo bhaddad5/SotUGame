@@ -36,7 +36,15 @@ MonoBehaviour:
     Dialogs:
     - CurrSpeaker: 1
       OptionalNpcReference: {fileID: 0}
-      Text: Join us.  Or else...
+      Text: We have your sister.  From now on you'll do as we say.
+      CustomNpcImageOptions: []
+    - CurrSpeaker: 0
+      OptionalNpcReference: {fileID: 11400000, guid: 802689931ef885b4a9a4963ac53b77cf, type: 2}
+      Text: Pleaase sis!  Listen to him.
+      CustomNpcImageOptions: []
+    - CurrSpeaker: 0
+      OptionalNpcReference: {fileID: 11400000, guid: f2671ec0f8c765d41938fd616550011d, type: 2}
+      Text: OK, please!  Just don't hurt her!
       CustomNpcImageOptions: []
     OptionalPopups: []
     Effect:
