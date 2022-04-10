@@ -22,6 +22,7 @@ namespace Assets.GameModel
 
 		public string DefaultFirstName => DefaultGameData.FirstName;
 		public string DefaultLastName => DefaultGameData.LastName;
+		public string DefaultPartyName => DefaultGameData.PartyName;
 
 		[SerializeField] private HudBindings HudUiDisplayPrefab;
 		[SerializeField] private MainMapScreenBindings MainMapUiDisplayPrefab;
@@ -29,7 +30,7 @@ namespace Assets.GameModel
 		private HudBindings hudUiDisplay;
 		private MainMapScreenBindings mainMapUiDisplay;
 		
-		public void InitializeGame(string saveDataPath, string firstName, string lastName)
+		public void InitializeGame(string saveDataPath, string firstName, string lastName, string partyName)
 		{
 			if (hudUiDisplay != null)
 			{
@@ -58,6 +59,7 @@ namespace Assets.GameModel
 			{
 				Data.FirstName = firstName;
 				Data.LastName = lastName;
+				Data.PartyName = partyName;
 			}
 
 			hudUiDisplay.Setup(this, mainMapUiDisplay);

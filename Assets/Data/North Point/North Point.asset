@@ -27,11 +27,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f2671ec0f8c765d41938fd616550011d, type: 2}
   - {fileID: 11400000, guid: d470041dd85da3b4793a998874c27ef5, type: 2}
   - {fileID: 11400000, guid: af1c93898cdc3174d9f34ff6c175caf4, type: 2}
-  PartySupport:
+  StartingPartySupport:
   - Party: {fileID: 11400000, guid: 34f5c062b1d813d449e3694fcb3dfb15, type: 2}
     Support: 0.8
   - Party: {fileID: 11400000, guid: 958ca37a2c1a85d4b94cc9ba183c8cdd, type: 2}
     Support: 0.15
   - Party: {fileID: 11400000, guid: 9ba4373274767a248ab12242004fc955, type: 2}
     Support: 0.05
+  PartySupport:
+  - Party: {fileID: 11400000, guid: 958ca37a2c1a85d4b94cc9ba183c8cdd, type: 2}
+    Support: 0.3
+  - Party: {fileID: 11400000, guid: 34f5c062b1d813d449e3694fcb3dfb15, type: 2}
+    Support: 0.6
+  - Party: {fileID: 11400000, guid: 9ba4373274767a248ab12242004fc955, type: 2}
+    Support: 0.1
+  - Party: {fileID: 11400000, guid: 895ef5c593a78194382ae89707bf84af, type: 2}
+    Support: 0
   Controlled: 0

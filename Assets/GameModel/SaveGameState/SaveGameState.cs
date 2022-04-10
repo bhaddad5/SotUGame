@@ -62,6 +62,7 @@ namespace Assets.GameModel.Save
 		{
 			data.FirstName = FirstName ?? "Hunter";
 			data.LastName = LastName ?? "Downe";
+			data.PartyName = PartyName ?? "Tradition";
 			data.TurnNumber = TurnNumber;
 			data.Actions = Actions;
 			data.Intrigue = Intrigue;
@@ -73,7 +74,7 @@ namespace Assets.GameModel.Save
 
 			foreach (var location in Locations)
 			{
-				location.ApplyToData(data.Locations.FirstOrDefault(d => d?.Id == location.Id));
+				location.ApplyToData(data.Locations.FirstOrDefault(d => d?.Id == location.Id), data);
 			}
 
 			foreach (var startTurnInteraction in StartTurnInteractions)
@@ -92,6 +93,14 @@ namespace Assets.GameModel.Save
 
 		public List<SavedNpcState> Npcs;
 		public List<SavedPolicyState> Policies;
+
+		[Serializable]
+		public struct SavedSupportState
+		{
+			public string PartyId;
+			public float Support;
+		}
+		public List<SavedSupportState> Support;
 
 		public static SavedLocationState FromData(Location data)
 		{
@@ -114,10 +123,16 @@ namespace Assets.GameModel.Save
 					res.Policies.Add(SavedPolicyState.FromData(dataPolicy));
 			}
 
+			res.Support = new List<SavedSupportState>();
+			foreach (var support in data.PartySupport)
+			{
+				res.Support.Add(new SavedSupportState(){PartyId = support.Party.Id, Support = support.Support});
+			}
+
 			return res;
 		}
 
-		public void ApplyToData(Location data)
+		public void ApplyToData(Location data, GameData rootData)
 		{
 			if (data == null)
 			{
@@ -135,6 +150,16 @@ namespace Assets.GameModel.Save
 			{
 				policy.ApplyToData(data.Policies.FirstOrDefault(d => d?.Id == policy.Id));
 			}
+
+			List<PartyLocationSupport> supports = new List<PartyLocationSupport>();
+			foreach (var savedSupportState in Support)
+			{
+				var party = rootData.Parties.FirstOrDefault(p => p.Id == savedSupportState.PartyId);
+				if(party == null)
+					continue;
+				supports.Add(new PartyLocationSupport(){Party = party, Support = savedSupportState.Support});
+			}
+			data.PartySupport = supports;
 		}
 	}
 

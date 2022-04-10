@@ -34,6 +34,8 @@ namespace Assets.GameModel
 		public List<Policy> Policies = new List<Policy>();
 		public List<Npc> Npcs = new List<Npc>();
 
+		public List<PartyLocationSupport> StartingPartySupport = new List<PartyLocationSupport>();
+		[HideInInspector]
 		public List<PartyLocationSupport> PartySupport = new List<PartyLocationSupport>();
 
 		[HideInInspector]
@@ -47,6 +49,8 @@ namespace Assets.GameModel
 				ob.Setup(mgm);
 			foreach (var ob in Policies)
 				ob.Setup();
+
+			PartySupport = StartingPartySupport;
 
 			float totalSupport = 0;
 			HashSet<Party> supportedParties = new HashSet<Party>();

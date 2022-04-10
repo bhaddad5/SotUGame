@@ -29,9 +29,9 @@ public class StartingMenuBindings : MonoBehaviour
 	{
 		var popupParent = GameObject.Instantiate(UiPrefabReferences.Instance.PopupOverlayParent);
 		var namePicker = GameObject.Instantiate(NamePickerPrefab, popupParent.transform);
-		namePicker.Setup(MainGameManager.DefaultFirstName, MainGameManager.DefaultLastName, (firstName, lastName) =>
+		namePicker.Setup(MainGameManager.DefaultFirstName, MainGameManager.DefaultLastName, MainGameManager.DefaultPartyName, (firstName, lastName, partyName) =>
 		{
-			MainGameManager.InitializeGame(null, firstName, lastName);
+			MainGameManager.InitializeGame(null, firstName, lastName, partyName);
 			GameObject.Destroy(gameObject);
 		});
 	}
@@ -45,7 +45,7 @@ public class StartingMenuBindings : MonoBehaviour
 
 	public void ContinueGame()
 	{
-		MainGameManager.InitializeGame(latestSave, null, null);
+		MainGameManager.InitializeGame(latestSave, null, null, null);
 		GameObject.Destroy(gameObject);
 	}
 

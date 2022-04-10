@@ -24,6 +24,13 @@ MonoBehaviour:
   Policies: []
   Npcs:
   - {fileID: 11400000, guid: 802689931ef885b4a9a4963ac53b77cf, type: 2}
+  StartingPartySupport:
+  - Party: {fileID: 11400000, guid: 958ca37a2c1a85d4b94cc9ba183c8cdd, type: 2}
+    Support: 0.5
+  - Party: {fileID: 11400000, guid: 9ba4373274767a248ab12242004fc955, type: 2}
+    Support: 0.2
+  - Party: {fileID: 11400000, guid: 34f5c062b1d813d449e3694fcb3dfb15, type: 2}
+    Support: 0.3
   PartySupport:
   - Party: {fileID: 11400000, guid: 9ba4373274767a248ab12242004fc955, type: 2}
     Support: 0.1
